@@ -1,0 +1,940 @@
+nohup: ignoring input
+Using Device: cuda:1
+Files already downloaded and verified
+Files already downloaded and verified
+Epoch: 1
+Training:	Loss: 4.0149	LR: 0.100000	Time: 26.65s
+Testing:	Loss: 0.0289	Acc: 0.1263	Time:1.86s
+/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:154: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Epoch: 2
+Training:	Loss: 3.4560	LR: 0.100000	Time: 33.42s
+Testing:	Loss: 0.0261	Acc: 0.1959	Time:1.76s
+Epoch: 3
+Training:	Loss: 3.0672	LR: 0.100000	Time: 28.79s
+Testing:	Loss: 0.0233	Acc: 0.2611	Time:1.79s
+Epoch: 4
+Training:	Loss: 2.7397	LR: 0.100000	Time: 31.47s
+Testing:	Loss: 0.0213	Acc: 0.3169	Time:1.85s
+Epoch: 5
+Training:	Loss: 2.4641	LR: 0.100000	Time: 27.75s
+Testing:	Loss: 0.0193	Acc: 0.3693	Time:1.80s
+Epoch: 6
+Training:	Loss: 2.2453	LR: 0.100000	Time: 30.49s
+Testing:	Loss: 0.0181	Acc: 0.3973	Time:1.86s
+Epoch: 7
+Training:	Loss: 2.0569	LR: 0.100000	Time: 29.70s
+Testing:	Loss: 0.0185	Acc: 0.3861	Time:1.79s
+Epoch: 8
+Training:	Loss: 1.9369	LR: 0.100000	Time: 29.48s
+Testing:	Loss: 0.0158	Acc: 0.4708	Time:1.72s
+Epoch: 9
+Training:	Loss: 1.8330	LR: 0.100000	Time: 30.44s
+Testing:	Loss: 0.0165	Acc: 0.4546	Time:3.44s
+Epoch: 10
+Training:	Loss: 1.7698	LR: 0.100000	Time: 27.61s
+Testing:	Loss: 0.0146	Acc: 0.5009	Time:1.87s
+Epoch: 11
+Training:	Loss: 1.6933	LR: 0.100000	Time: 30.97s
+Testing:	Loss: 0.0146	Acc: 0.5068	Time:1.75s
+Epoch: 12
+Training:	Loss: 1.6381	LR: 0.100000	Time: 30.40s
+Testing:	Loss: 0.0143	Acc: 0.5095	Time:1.86s
+Epoch: 13
+Training:	Loss: 1.5973	LR: 0.100000	Time: 30.24s
+Testing:	Loss: 0.0143	Acc: 0.5159	Time:1.79s
+Epoch: 14
+Training:	Loss: 1.5589	LR: 0.100000	Time: 27.47s
+Testing:	Loss: 0.0158	Acc: 0.4821	Time:1.87s
+Epoch: 15
+Training:	Loss: 1.5333	LR: 0.100000	Time: 30.93s
+Testing:	Loss: 0.0164	Acc: 0.4751	Time:1.77s
+Epoch: 16
+Training:	Loss: 1.4978	LR: 0.100000	Time: 29.34s
+Testing:	Loss: 0.0138	Acc: 0.5286	Time:1.75s
+Epoch: 17
+Training:	Loss: 1.4788	LR: 0.100000	Time: 31.24s
+Testing:	Loss: 0.0140	Acc: 0.5308	Time:1.78s
+Epoch: 18
+Training:	Loss: 1.4495	LR: 0.100000	Time: 27.99s
+Testing:	Loss: 0.0147	Acc: 0.5045	Time:5.12s
+Epoch: 19
+Training:	Loss: 1.4368	LR: 0.100000	Time: 27.55s
+Testing:	Loss: 0.0145	Acc: 0.5241	Time:1.75s
+Epoch: 20
+Training:	Loss: 1.4176	LR: 0.100000	Time: 32.09s
+Testing:	Loss: 0.0139	Acc: 0.5300	Time:1.79s
+Epoch: 21
+Training:	Loss: 1.4066	LR: 0.100000	Time: 31.46s
+Testing:	Loss: 0.0134	Acc: 0.5503	Time:1.87s
+Epoch: 22
+Training:	Loss: 1.3811	LR: 0.100000	Time: 29.51s
+Testing:	Loss: 0.0147	Acc: 0.5175	Time:1.84s
+Epoch: 23
+Training:	Loss: 1.3799	LR: 0.100000	Time: 27.55s
+Testing:	Loss: 0.0139	Acc: 0.5363	Time:1.88s
+Epoch: 24
+Training:	Loss: 1.3604	LR: 0.100000	Time: 31.86s
+Testing:	Loss: 0.0126	Acc: 0.5602	Time:1.80s
+Epoch: 25
+Training:	Loss: 1.3511	LR: 0.100000	Time: 30.26s
+Testing:	Loss: 0.0134	Acc: 0.5521	Time:1.83s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/25_regular.pth
+Epoch: 26
+Training:	Loss: 1.3409	LR: 0.100000	Time: 29.51s
+Testing:	Loss: 0.0139	Acc: 0.5435	Time:1.84s
+Epoch: 27
+Training:	Loss: 1.3262	LR: 0.100000	Time: 27.59s
+Testing:	Loss: 0.0132	Acc: 0.5531	Time:1.87s
+Epoch: 28
+Training:	Loss: 1.3241	LR: 0.100000	Time: 29.66s
+Testing:	Loss: 0.0126	Acc: 0.5673	Time:1.81s
+Epoch: 29
+Training:	Loss: 1.3097	LR: 0.100000	Time: 32.37s
+Testing:	Loss: 0.0122	Acc: 0.5878	Time:1.81s
+Epoch: 30
+Training:	Loss: 1.2981	LR: 0.100000	Time: 30.98s
+Testing:	Loss: 0.0120	Acc: 0.5952	Time:1.76s
+Epoch: 31
+Training:	Loss: 1.3001	LR: 0.100000	Time: 27.63s
+Testing:	Loss: 0.0127	Acc: 0.5723	Time:5.23s
+Epoch: 32
+Training:	Loss: 1.2890	LR: 0.100000	Time: 27.40s
+Testing:	Loss: 0.0137	Acc: 0.5439	Time:1.84s
+Epoch: 33
+Training:	Loss: 1.2826	LR: 0.100000	Time: 33.33s
+Testing:	Loss: 0.0125	Acc: 0.5758	Time:1.85s
+Epoch: 34
+Training:	Loss: 1.2802	LR: 0.100000	Time: 31.10s
+Testing:	Loss: 0.0127	Acc: 0.5695	Time:1.79s
+Epoch: 35
+Training:	Loss: 1.2800	LR: 0.100000	Time: 29.99s
+Testing:	Loss: 0.0126	Acc: 0.5724	Time:3.35s
+Epoch: 36
+Training:	Loss: 1.2680	LR: 0.100000	Time: 27.41s
+Testing:	Loss: 0.0126	Acc: 0.5763	Time:1.79s
+Epoch: 37
+Training:	Loss: 1.2639	LR: 0.100000	Time: 31.25s
+Testing:	Loss: 0.0134	Acc: 0.5541	Time:1.81s
+Epoch: 38
+Training:	Loss: 1.2613	LR: 0.100000	Time: 30.17s
+Testing:	Loss: 0.0130	Acc: 0.5618	Time:1.77s
+Epoch: 39
+Training:	Loss: 1.2510	LR: 0.100000	Time: 31.58s
+Testing:	Loss: 0.0137	Acc: 0.5486	Time:1.82s
+Epoch: 40
+Training:	Loss: 1.2551	LR: 0.100000	Time: 27.39s
+Testing:	Loss: 0.0124	Acc: 0.5792	Time:1.84s
+Epoch: 41
+Training:	Loss: 1.2457	LR: 0.100000	Time: 32.58s
+Testing:	Loss: 0.0140	Acc: 0.5497	Time:1.85s
+Epoch: 42
+Training:	Loss: 1.2386	LR: 0.100000	Time: 29.42s
+Testing:	Loss: 0.0138	Acc: 0.5429	Time:1.84s
+Epoch: 43
+Training:	Loss: 1.2337	LR: 0.100000	Time: 29.96s
+Testing:	Loss: 0.0148	Acc: 0.5398	Time:1.76s
+Epoch: 44
+Training:	Loss: 1.2403	LR: 0.100000	Time: 27.65s
+Testing:	Loss: 0.0136	Acc: 0.5515	Time:1.77s
+Epoch: 45
+Training:	Loss: 1.2215	LR: 0.100000	Time: 32.28s
+Testing:	Loss: 0.0130	Acc: 0.5684	Time:1.80s
+Epoch: 46
+Training:	Loss: 1.2303	LR: 0.100000	Time: 30.31s
+Testing:	Loss: 0.0127	Acc: 0.5779	Time:1.81s
+Epoch: 47
+Training:	Loss: 1.2209	LR: 0.100000	Time: 29.19s
+Testing:	Loss: 0.0127	Acc: 0.5837	Time:1.80s
+Epoch: 48
+Training:	Loss: 1.2220	LR: 0.100000	Time: 27.71s
+Testing:	Loss: 0.0131	Acc: 0.5718	Time:7.36s
+Epoch: 49
+Training:	Loss: 1.2254	LR: 0.100000	Time: 27.21s
+Testing:	Loss: 0.0125	Acc: 0.5806	Time:1.83s
+Epoch: 50
+Training:	Loss: 1.2112	LR: 0.100000	Time: 30.56s
+Testing:	Loss: 0.0142	Acc: 0.5502	Time:1.76s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/50_regular.pth
+Epoch: 51
+Training:	Loss: 1.2180	LR: 0.100000	Time: 29.96s
+Testing:	Loss: 0.0129	Acc: 0.5677	Time:1.82s
+Epoch: 52
+Training:	Loss: 1.2138	LR: 0.100000	Time: 30.24s
+Testing:	Loss: 0.0127	Acc: 0.5730	Time:1.73s
+Epoch: 53
+Training:	Loss: 1.2087	LR: 0.100000	Time: 30.05s
+Testing:	Loss: 0.0122	Acc: 0.5855	Time:1.72s
+Epoch: 54
+Training:	Loss: 1.2148	LR: 0.100000	Time: 31.15s
+Testing:	Loss: 0.0140	Acc: 0.5457	Time:1.76s
+Epoch: 55
+Training:	Loss: 1.2029	LR: 0.100000	Time: 29.30s
+Testing:	Loss: 0.0129	Acc: 0.5801	Time:1.78s
+Epoch: 56
+Training:	Loss: 1.2087	LR: 0.100000	Time: 32.13s
+Testing:	Loss: 0.0129	Acc: 0.5685	Time:1.76s
+Epoch: 57
+Training:	Loss: 1.2015	LR: 0.100000	Time: 28.90s
+Testing:	Loss: 0.0129	Acc: 0.5785	Time:1.77s
+Epoch: 58
+Training:	Loss: 1.2002	LR: 0.100000	Time: 29.15s
+Testing:	Loss: 0.0126	Acc: 0.5764	Time:1.79s
+Epoch: 59
+Training:	Loss: 1.1901	LR: 0.100000	Time: 31.21s
+Testing:	Loss: 0.0146	Acc: 0.5361	Time:1.70s
+Epoch: 60
+Training:	Loss: 1.1980	LR: 0.100000	Time: 29.46s
+Testing:	Loss: 0.0124	Acc: 0.5863	Time:1.74s
+Epoch: 61
+Training:	Loss: 1.1806	LR: 0.100000	Time: 29.98s
+Testing:	Loss: 0.0123	Acc: 0.5884	Time:1.78s
+Epoch: 62
+Training:	Loss: 1.1941	LR: 0.100000	Time: 33.24s
+Testing:	Loss: 0.0135	Acc: 0.5658	Time:1.81s
+Epoch: 63
+Training:	Loss: 1.1856	LR: 0.100000	Time: 29.45s
+Testing:	Loss: 0.0121	Acc: 0.5952	Time:1.77s
+Epoch: 64
+Training:	Loss: 1.1969	LR: 0.100000	Time: 32.69s
+Testing:	Loss: 0.0140	Acc: 0.5472	Time:1.76s
+Epoch: 65
+Training:	Loss: 1.1885	LR: 0.100000	Time: 30.95s
+Testing:	Loss: 0.0139	Acc: 0.5344	Time:1.72s
+Epoch: 66
+Training:	Loss: 1.1829	LR: 0.100000	Time: 30.90s
+Testing:	Loss: 0.0120	Acc: 0.5959	Time:1.77s
+Epoch: 67
+Training:	Loss: 1.1753	LR: 0.100000	Time: 30.52s
+Testing:	Loss: 0.0131	Acc: 0.5729	Time:1.73s
+Epoch: 68
+Training:	Loss: 1.1807	LR: 0.100000	Time: 29.19s
+Testing:	Loss: 0.0129	Acc: 0.5741	Time:1.73s
+Epoch: 69
+Training:	Loss: 1.1841	LR: 0.100000	Time: 29.77s
+Testing:	Loss: 0.0136	Acc: 0.5597	Time:1.69s
+Epoch: 70
+Training:	Loss: 1.1830	LR: 0.100000	Time: 29.40s
+Testing:	Loss: 0.0125	Acc: 0.5763	Time:1.78s
+Epoch: 71
+Training:	Loss: 1.1735	LR: 0.100000	Time: 29.32s
+Testing:	Loss: 0.0137	Acc: 0.5700	Time:1.76s
+Epoch: 72
+Training:	Loss: 1.1741	LR: 0.100000	Time: 32.07s
+Testing:	Loss: 0.0119	Acc: 0.5941	Time:1.68s
+Epoch: 73
+Training:	Loss: 1.1830	LR: 0.100000	Time: 29.24s
+Testing:	Loss: 0.0126	Acc: 0.5750	Time:1.73s
+Epoch: 74
+Training:	Loss: 1.1622	LR: 0.100000	Time: 29.16s
+Testing:	Loss: 0.0133	Acc: 0.5624	Time:1.80s
+Epoch: 75
+Training:	Loss: 1.1691	LR: 0.100000	Time: 28.93s
+Testing:	Loss: 0.0123	Acc: 0.5873	Time:1.80s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/75_regular.pth
+Epoch: 76
+Training:	Loss: 1.1763	LR: 0.100000	Time: 29.24s
+Testing:	Loss: 0.0127	Acc: 0.5699	Time:1.75s
+Epoch: 77
+Training:	Loss: 1.1677	LR: 0.100000	Time: 31.54s
+Testing:	Loss: 0.0122	Acc: 0.5872	Time:1.83s
+Epoch: 78
+Training:	Loss: 1.1754	LR: 0.100000	Time: 29.55s
+Testing:	Loss: 0.0125	Acc: 0.5788	Time:1.88s
+Epoch: 79
+Training:	Loss: 1.1672	LR: 0.100000	Time: 29.50s
+Testing:	Loss: 0.0133	Acc: 0.5694	Time:1.84s
+Epoch: 80
+Training:	Loss: 1.1710	LR: 0.100000	Time: 31.01s
+Testing:	Loss: 0.0133	Acc: 0.5649	Time:1.82s
+Epoch: 81
+Training:	Loss: 1.1630	LR: 0.100000	Time: 29.63s
+Testing:	Loss: 0.0122	Acc: 0.5912	Time:3.97s
+Epoch: 82
+Training:	Loss: 1.1681	LR: 0.100000	Time: 30.18s
+Testing:	Loss: 0.0127	Acc: 0.5801	Time:5.36s
+Epoch: 83
+Training:	Loss: 1.1676	LR: 0.100000	Time: 28.78s
+Testing:	Loss: 0.0118	Acc: 0.6079	Time:1.79s
+Epoch: 84
+Training:	Loss: 1.1635	LR: 0.100000	Time: 30.47s
+Testing:	Loss: 0.0124	Acc: 0.5889	Time:1.79s
+Epoch: 85
+Training:	Loss: 1.1614	LR: 0.100000	Time: 30.53s
+Testing:	Loss: 0.0140	Acc: 0.5474	Time:1.85s
+Epoch: 86
+Training:	Loss: 1.1606	LR: 0.100000	Time: 28.97s
+Testing:	Loss: 0.0135	Acc: 0.5704	Time:1.81s
+Epoch: 87
+Training:	Loss: 1.1577	LR: 0.100000	Time: 30.10s
+Testing:	Loss: 0.0124	Acc: 0.5893	Time:1.79s
+Epoch: 88
+Training:	Loss: 1.1659	LR: 0.100000	Time: 31.27s
+Testing:	Loss: 0.0135	Acc: 0.5623	Time:1.90s
+Epoch: 89
+Training:	Loss: 1.1643	LR: 0.100000	Time: 30.04s
+Testing:	Loss: 0.0123	Acc: 0.5959	Time:1.80s
+Epoch: 90
+Training:	Loss: 1.1550	LR: 0.100000	Time: 29.92s
+Testing:	Loss: 0.0128	Acc: 0.5745	Time:1.85s
+Epoch: 91
+Training:	Loss: 1.1557	LR: 0.100000	Time: 32.20s
+Testing:	Loss: 0.0133	Acc: 0.5670	Time:1.81s
+Epoch: 92
+Training:	Loss: 1.1601	LR: 0.100000	Time: 28.87s
+Testing:	Loss: 0.0118	Acc: 0.6006	Time:1.79s
+Epoch: 93
+Training:	Loss: 1.1678	LR: 0.100000	Time: 30.31s
+Testing:	Loss: 0.0131	Acc: 0.5762	Time:1.90s
+Epoch: 94
+Training:	Loss: 1.1448	LR: 0.100000	Time: 29.15s
+Testing:	Loss: 0.0129	Acc: 0.5765	Time:1.87s
+Epoch: 95
+Training:	Loss: 1.1586	LR: 0.100000	Time: 30.14s
+Testing:	Loss: 0.0126	Acc: 0.5775	Time:1.77s
+Epoch: 96
+Training:	Loss: 1.1589	LR: 0.100000	Time: 30.35s
+Testing:	Loss: 0.0130	Acc: 0.5659	Time:1.85s
+Epoch: 97
+Training:	Loss: 1.1526	LR: 0.100000	Time: 32.20s
+Testing:	Loss: 0.0136	Acc: 0.5624	Time:1.77s
+Epoch: 98
+Training:	Loss: 1.1565	LR: 0.100000	Time: 29.99s
+Testing:	Loss: 0.0129	Acc: 0.5767	Time:1.84s
+Epoch: 99
+Training:	Loss: 1.1455	LR: 0.100000	Time: 29.31s
+Testing:	Loss: 0.0119	Acc: 0.5994	Time:1.91s
+Epoch: 100
+Training:	Loss: 1.1511	LR: 0.100000	Time: 29.40s
+Testing:	Loss: 0.0144	Acc: 0.5264	Time:1.86s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/100_regular.pth
+Epoch: 101
+Training:	Loss: 1.1542	LR: 0.100000	Time: 30.76s
+Testing:	Loss: 0.0122	Acc: 0.5982	Time:1.95s
+Epoch: 102
+Training:	Loss: 1.1440	LR: 0.100000	Time: 31.42s
+Testing:	Loss: 0.0121	Acc: 0.5893	Time:2.00s
+Epoch: 103
+Training:	Loss: 1.1359	LR: 0.100000	Time: 29.13s
+Testing:	Loss: 0.0138	Acc: 0.5559	Time:1.93s
+Epoch: 104
+Training:	Loss: 1.1593	LR: 0.100000	Time: 31.11s
+Testing:	Loss: 0.0135	Acc: 0.5610	Time:2.04s
+Epoch: 105
+Training:	Loss: 1.1447	LR: 0.100000	Time: 32.88s
+Testing:	Loss: 0.0132	Acc: 0.5614	Time:1.96s
+Epoch: 106
+Training:	Loss: 1.1462	LR: 0.100000	Time: 30.38s
+Testing:	Loss: 0.0127	Acc: 0.5849	Time:2.01s
+Epoch: 107
+Training:	Loss: 1.1413	LR: 0.100000	Time: 29.92s
+Testing:	Loss: 0.0127	Acc: 0.5730	Time:1.93s
+Epoch: 108
+Training:	Loss: 1.1461	LR: 0.100000	Time: 29.12s
+Testing:	Loss: 0.0134	Acc: 0.5626	Time:1.96s
+Epoch: 109
+Training:	Loss: 1.1526	LR: 0.100000	Time: 32.77s
+Testing:	Loss: 0.0142	Acc: 0.5563	Time:1.94s
+Epoch: 110
+Training:	Loss: 1.1557	LR: 0.100000	Time: 29.53s
+Testing:	Loss: 0.0144	Acc: 0.5482	Time:1.99s
+Epoch: 111
+Training:	Loss: 1.1444	LR: 0.100000	Time: 30.88s
+Testing:	Loss: 0.0144	Acc: 0.5458	Time:2.04s
+Epoch: 112
+Training:	Loss: 1.1408	LR: 0.100000	Time: 29.19s
+Testing:	Loss: 0.0138	Acc: 0.5576	Time:3.17s
+Epoch: 113
+Training:	Loss: 1.1490	LR: 0.100000	Time: 32.75s
+Testing:	Loss: 0.0122	Acc: 0.5914	Time:6.16s
+Epoch: 114
+Training:	Loss: 1.1267	LR: 0.100000	Time: 29.96s
+Testing:	Loss: 0.0130	Acc: 0.5846	Time:1.90s
+Epoch: 115
+Training:	Loss: 1.1424	LR: 0.100000	Time: 31.74s
+Testing:	Loss: 0.0142	Acc: 0.5631	Time:3.85s
+Epoch: 116
+Training:	Loss: 1.1500	LR: 0.100000	Time: 30.99s
+Testing:	Loss: 0.0114	Acc: 0.6080	Time:2.03s
+Epoch: 117
+Training:	Loss: 1.1466	LR: 0.100000	Time: 30.92s
+Testing:	Loss: 0.0127	Acc: 0.5783	Time:1.95s
+Epoch: 118
+Training:	Loss: 1.1420	LR: 0.100000	Time: 30.27s
+Testing:	Loss: 0.0132	Acc: 0.5723	Time:2.06s
+Epoch: 119
+Training:	Loss: 1.1404	LR: 0.100000	Time: 30.65s
+Testing:	Loss: 0.0138	Acc: 0.5579	Time:1.92s
+Epoch: 120
+Training:	Loss: 1.1467	LR: 0.100000	Time: 29.75s
+Testing:	Loss: 0.0137	Acc: 0.5657	Time:2.01s
+Epoch: 121
+Training:	Loss: 1.1357	LR: 0.100000	Time: 32.26s
+Testing:	Loss: 0.0134	Acc: 0.5755	Time:1.94s
+Epoch: 122
+Training:	Loss: 1.1390	LR: 0.100000	Time: 29.90s
+Testing:	Loss: 0.0132	Acc: 0.5659	Time:2.05s
+Epoch: 123
+Training:	Loss: 1.1408	LR: 0.100000	Time: 28.94s
+Testing:	Loss: 0.0133	Acc: 0.5589	Time:2.03s
+Epoch: 124
+Training:	Loss: 1.1338	LR: 0.100000	Time: 29.46s
+Testing:	Loss: 0.0124	Acc: 0.5921	Time:1.95s
+Epoch: 125
+Training:	Loss: 1.1372	LR: 0.100000	Time: 29.28s
+Testing:	Loss: 0.0124	Acc: 0.5948	Time:1.95s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/125_regular.pth
+Epoch: 126
+Training:	Loss: 1.1440	LR: 0.100000	Time: 29.45s
+Testing:	Loss: 0.0177	Acc: 0.4896	Time:1.94s
+Epoch: 127
+Training:	Loss: 1.1301	LR: 0.100000	Time: 30.07s
+Testing:	Loss: 0.0123	Acc: 0.5886	Time:2.04s
+Epoch: 128
+Training:	Loss: 1.1400	LR: 0.100000	Time: 33.09s
+Testing:	Loss: 0.0135	Acc: 0.5617	Time:2.04s
+Epoch: 129
+Training:	Loss: 1.1367	LR: 0.100000	Time: 29.25s
+Testing:	Loss: 0.0126	Acc: 0.5875	Time:2.03s
+Epoch: 130
+Training:	Loss: 1.1403	LR: 0.100000	Time: 29.90s
+Testing:	Loss: 0.0125	Acc: 0.5864	Time:1.92s
+Epoch: 131
+Training:	Loss: 1.1284	LR: 0.100000	Time: 30.20s
+Testing:	Loss: 0.0125	Acc: 0.5884	Time:2.06s
+Epoch: 132
+Training:	Loss: 1.1421	LR: 0.100000	Time: 30.18s
+Testing:	Loss: 0.0135	Acc: 0.5613	Time:2.02s
+Epoch: 133
+Training:	Loss: 1.1380	LR: 0.100000	Time: 29.38s
+Testing:	Loss: 0.0134	Acc: 0.5648	Time:1.95s
+Epoch: 134
+Training:	Loss: 1.1316	LR: 0.100000	Time: 29.53s
+Testing:	Loss: 0.0132	Acc: 0.5710	Time:1.95s
+Epoch: 135
+Training:	Loss: 1.1298	LR: 0.100000	Time: 30.31s
+Testing:	Loss: 0.0136	Acc: 0.5663	Time:2.07s
+Epoch: 136
+Training:	Loss: 1.1345	LR: 0.100000	Time: 29.02s
+Testing:	Loss: 0.0125	Acc: 0.5902	Time:2.09s
+Epoch: 137
+Training:	Loss: 1.1344	LR: 0.100000	Time: 30.81s
+Testing:	Loss: 0.0132	Acc: 0.5812	Time:5.55s
+Epoch: 138
+Training:	Loss: 1.1280	LR: 0.100000	Time: 30.20s
+Testing:	Loss: 0.0122	Acc: 0.5938	Time:3.05s
+Epoch: 139
+Training:	Loss: 1.1303	LR: 0.100000	Time: 30.20s
+Testing:	Loss: 0.0123	Acc: 0.5815	Time:1.92s
+Epoch: 140
+Training:	Loss: 1.1324	LR: 0.100000	Time: 30.51s
+Testing:	Loss: 0.0125	Acc: 0.5905	Time:2.02s
+Epoch: 141
+Training:	Loss: 1.1197	LR: 0.100000	Time: 29.73s
+Testing:	Loss: 0.0115	Acc: 0.6032	Time:2.07s
+Epoch: 142
+Training:	Loss: 1.1361	LR: 0.100000	Time: 30.15s
+Testing:	Loss: 0.0133	Acc: 0.5700	Time:1.93s
+Epoch: 143
+Training:	Loss: 1.1314	LR: 0.100000	Time: 28.81s
+Testing:	Loss: 0.0124	Acc: 0.5967	Time:1.96s
+Epoch: 144
+Training:	Loss: 1.1304	LR: 0.100000	Time: 29.87s
+Testing:	Loss: 0.0121	Acc: 0.5966	Time:2.02s
+Epoch: 145
+Training:	Loss: 1.1306	LR: 0.100000	Time: 29.70s
+Testing:	Loss: 0.0135	Acc: 0.5510	Time:2.06s
+Epoch: 146
+Training:	Loss: 1.1316	LR: 0.100000	Time: 29.19s
+Testing:	Loss: 0.0117	Acc: 0.6102	Time:1.95s
+Epoch: 147
+Training:	Loss: 1.1265	LR: 0.100000	Time: 31.70s
+Testing:	Loss: 0.0132	Acc: 0.5702	Time:2.03s
+Epoch: 148
+Training:	Loss: 1.1308	LR: 0.100000	Time: 29.26s
+Testing:	Loss: 0.0131	Acc: 0.5647	Time:1.98s
+Epoch: 149
+Training:	Loss: 1.1350	LR: 0.100000	Time: 29.43s
+Testing:	Loss: 0.0129	Acc: 0.5767	Time:1.91s
+Epoch: 150
+Training:	Loss: 1.1382	LR: 0.100000	Time: 29.95s
+Testing:	Loss: 0.0144	Acc: 0.5342	Time:1.97s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/150_regular.pth
+Epoch: 151
+Training:	Loss: 0.6844	LR: 0.010000	Time: 30.02s
+Testing:	Loss: 0.0074	Acc: 0.7344	Time:2.03s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/151_best.pth
+Epoch: 152
+Training:	Loss: 0.5200	LR: 0.010000	Time: 29.10s
+Testing:	Loss: 0.0072	Acc: 0.7439	Time:1.97s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/152_best.pth
+Epoch: 153
+Training:	Loss: 0.4528	LR: 0.010000	Time: 31.16s
+Testing:	Loss: 0.0072	Acc: 0.7486	Time:1.98s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/153_best.pth
+Epoch: 154
+Training:	Loss: 0.4049	LR: 0.010000	Time: 28.78s
+Testing:	Loss: 0.0072	Acc: 0.7492	Time:2.05s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/154_best.pth
+Epoch: 155
+Training:	Loss: 0.3669	LR: 0.010000	Time: 29.33s
+Testing:	Loss: 0.0072	Acc: 0.7518	Time:2.01s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/155_best.pth
+Epoch: 156
+Training:	Loss: 0.3356	LR: 0.010000	Time: 29.00s
+Testing:	Loss: 0.0072	Acc: 0.7503	Time:1.91s
+Epoch: 157
+Training:	Loss: 0.3030	LR: 0.010000	Time: 29.56s
+Testing:	Loss: 0.0073	Acc: 0.7477	Time:4.93s
+Epoch: 158
+Training:	Loss: 0.2799	LR: 0.010000	Time: 30.60s
+Testing:	Loss: 0.0075	Acc: 0.7484	Time:3.00s
+Epoch: 159
+Training:	Loss: 0.2584	LR: 0.010000	Time: 29.58s
+Testing:	Loss: 0.0074	Acc: 0.7497	Time:1.99s
+Epoch: 160
+Training:	Loss: 0.2357	LR: 0.010000	Time: 30.09s
+Testing:	Loss: 0.0076	Acc: 0.7448	Time:1.95s
+Epoch: 161
+Training:	Loss: 0.2178	LR: 0.010000	Time: 28.86s
+Testing:	Loss: 0.0077	Acc: 0.7462	Time:1.93s
+Epoch: 162
+Training:	Loss: 0.2012	LR: 0.010000	Time: 29.18s
+Testing:	Loss: 0.0079	Acc: 0.7422	Time:1.98s
+Epoch: 163
+Training:	Loss: 0.1854	LR: 0.010000	Time: 30.94s
+Testing:	Loss: 0.0078	Acc: 0.7458	Time:1.96s
+Epoch: 164
+Training:	Loss: 0.1699	LR: 0.010000	Time: 29.82s
+Testing:	Loss: 0.0079	Acc: 0.7484	Time:1.92s
+Epoch: 165
+Training:	Loss: 0.1628	LR: 0.010000	Time: 31.00s
+Testing:	Loss: 0.0080	Acc: 0.7420	Time:2.06s
+Epoch: 166
+Training:	Loss: 0.1564	LR: 0.010000	Time: 29.40s
+Testing:	Loss: 0.0081	Acc: 0.7396	Time:1.93s
+Epoch: 167
+Training:	Loss: 0.1499	LR: 0.010000	Time: 29.29s
+Testing:	Loss: 0.0081	Acc: 0.7430	Time:1.93s
+Epoch: 168
+Training:	Loss: 0.1389	LR: 0.010000	Time: 30.10s
+Testing:	Loss: 0.0081	Acc: 0.7406	Time:2.02s
+Epoch: 169
+Training:	Loss: 0.1364	LR: 0.010000	Time: 29.13s
+Testing:	Loss: 0.0084	Acc: 0.7392	Time:2.05s
+Epoch: 170
+Training:	Loss: 0.1307	LR: 0.010000	Time: 29.56s
+Testing:	Loss: 0.0081	Acc: 0.7407	Time:1.93s
+Epoch: 171
+Training:	Loss: 0.1245	LR: 0.010000	Time: 31.82s
+Testing:	Loss: 0.0082	Acc: 0.7392	Time:2.03s
+Epoch: 172
+Training:	Loss: 0.1243	LR: 0.010000	Time: 29.20s
+Testing:	Loss: 0.0086	Acc: 0.7351	Time:1.99s
+Epoch: 173
+Training:	Loss: 0.1200	LR: 0.010000	Time: 32.93s
+Testing:	Loss: 0.0084	Acc: 0.7371	Time:2.05s
+Epoch: 174
+Training:	Loss: 0.1149	LR: 0.010000	Time: 29.25s
+Testing:	Loss: 0.0083	Acc: 0.7420	Time:2.00s
+Epoch: 175
+Training:	Loss: 0.1129	LR: 0.010000	Time: 31.83s
+Testing:	Loss: 0.0085	Acc: 0.7349	Time:2.02s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/175_regular.pth
+Epoch: 176
+Training:	Loss: 0.1099	LR: 0.010000	Time: 29.76s
+Testing:	Loss: 0.0085	Acc: 0.7397	Time:2.01s
+Epoch: 177
+Training:	Loss: 0.1174	LR: 0.010000	Time: 30.93s
+Testing:	Loss: 0.0085	Acc: 0.7383	Time:1.98s
+Epoch: 178
+Training:	Loss: 0.1114	LR: 0.010000	Time: 29.82s
+Testing:	Loss: 0.0085	Acc: 0.7369	Time:2.01s
+Epoch: 179
+Training:	Loss: 0.1145	LR: 0.010000	Time: 31.21s
+Testing:	Loss: 0.0087	Acc: 0.7362	Time:1.96s
+Epoch: 180
+Training:	Loss: 0.1158	LR: 0.010000	Time: 32.18s
+Testing:	Loss: 0.0085	Acc: 0.7364	Time:1.97s
+Epoch: 181
+Training:	Loss: 0.1146	LR: 0.010000	Time: 29.51s
+Testing:	Loss: 0.0089	Acc: 0.7309	Time:2.07s
+Epoch: 182
+Training:	Loss: 0.1269	LR: 0.010000	Time: 31.82s
+Testing:	Loss: 0.0091	Acc: 0.7262	Time:4.06s
+Epoch: 183
+Training:	Loss: 0.1247	LR: 0.010000	Time: 30.04s
+Testing:	Loss: 0.0089	Acc: 0.7322	Time:2.07s
+Epoch: 184
+Training:	Loss: 0.1139	LR: 0.010000	Time: 31.22s
+Testing:	Loss: 0.0091	Acc: 0.7231	Time:1.92s
+Epoch: 185
+Training:	Loss: 0.1233	LR: 0.010000	Time: 30.35s
+Testing:	Loss: 0.0089	Acc: 0.7322	Time:2.01s
+Epoch: 186
+Training:	Loss: 0.1204	LR: 0.010000	Time: 29.11s
+Testing:	Loss: 0.0093	Acc: 0.7283	Time:2.02s
+Epoch: 187
+Training:	Loss: 0.1263	LR: 0.010000	Time: 29.27s
+Testing:	Loss: 0.0093	Acc: 0.7256	Time:2.00s
+Epoch: 188
+Training:	Loss: 0.1254	LR: 0.010000	Time: 30.09s
+Testing:	Loss: 0.0092	Acc: 0.7267	Time:1.96s
+Epoch: 189
+Training:	Loss: 0.1260	LR: 0.010000	Time: 32.91s
+Testing:	Loss: 0.0095	Acc: 0.7198	Time:1.92s
+Epoch: 190
+Training:	Loss: 0.1351	LR: 0.010000	Time: 30.25s
+Testing:	Loss: 0.0092	Acc: 0.7242	Time:2.04s
+Epoch: 191
+Training:	Loss: 0.1430	LR: 0.010000	Time: 29.42s
+Testing:	Loss: 0.0095	Acc: 0.7188	Time:2.03s
+Epoch: 192
+Training:	Loss: 0.1329	LR: 0.010000	Time: 30.91s
+Testing:	Loss: 0.0099	Acc: 0.7079	Time:1.95s
+Epoch: 193
+Training:	Loss: 0.1389	LR: 0.010000	Time: 30.05s
+Testing:	Loss: 0.0097	Acc: 0.7107	Time:2.07s
+Epoch: 194
+Training:	Loss: 0.1401	LR: 0.010000	Time: 29.38s
+Testing:	Loss: 0.0095	Acc: 0.7154	Time:1.99s
+Epoch: 195
+Training:	Loss: 0.1434	LR: 0.010000	Time: 32.34s
+Testing:	Loss: 0.0099	Acc: 0.7099	Time:2.03s
+Epoch: 196
+Training:	Loss: 0.1406	LR: 0.010000	Time: 29.79s
+Testing:	Loss: 0.0096	Acc: 0.7157	Time:1.98s
+Epoch: 197
+Training:	Loss: 0.1427	LR: 0.010000	Time: 30.84s
+Testing:	Loss: 0.0099	Acc: 0.7058	Time:1.99s
+Epoch: 198
+Training:	Loss: 0.1447	LR: 0.010000	Time: 29.51s
+Testing:	Loss: 0.0097	Acc: 0.7110	Time:2.00s
+Epoch: 199
+Training:	Loss: 0.1425	LR: 0.010000	Time: 30.53s
+Testing:	Loss: 0.0097	Acc: 0.7119	Time:1.95s
+Epoch: 200
+Training:	Loss: 0.1413	LR: 0.010000	Time: 31.11s
+Testing:	Loss: 0.0097	Acc: 0.7148	Time:1.99s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/200_regular.pth
+Epoch: 201
+Training:	Loss: 0.1416	LR: 0.010000	Time: 29.10s
+Testing:	Loss: 0.0097	Acc: 0.7104	Time:2.00s
+Epoch: 202
+Training:	Loss: 0.1485	LR: 0.010000	Time: 31.26s
+Testing:	Loss: 0.0097	Acc: 0.7122	Time:2.03s
+Epoch: 203
+Training:	Loss: 0.1462	LR: 0.010000	Time: 29.94s
+Testing:	Loss: 0.0104	Acc: 0.7000	Time:2.01s
+Epoch: 204
+Training:	Loss: 0.1486	LR: 0.010000	Time: 30.57s
+Testing:	Loss: 0.0097	Acc: 0.7104	Time:2.00s
+Epoch: 205
+Training:	Loss: 0.1404	LR: 0.010000	Time: 31.35s
+Testing:	Loss: 0.0096	Acc: 0.7113	Time:2.02s
+Epoch: 206
+Training:	Loss: 0.1388	LR: 0.010000	Time: 31.52s
+Testing:	Loss: 0.0101	Acc: 0.7041	Time:1.98s
+Epoch: 207
+Training:	Loss: 0.1416	LR: 0.010000	Time: 30.72s
+Testing:	Loss: 0.0100	Acc: 0.7103	Time:1.99s
+Epoch: 208
+Training:	Loss: 0.1383	LR: 0.010000	Time: 29.30s
+Testing:	Loss: 0.0103	Acc: 0.6973	Time:6.25s
+Epoch: 209
+Training:	Loss: 0.1464	LR: 0.010000	Time: 30.62s
+Testing:	Loss: 0.0101	Acc: 0.7035	Time:3.37s
+Epoch: 210
+Training:	Loss: 0.1365	LR: 0.010000	Time: 30.84s
+Testing:	Loss: 0.0103	Acc: 0.7032	Time:3.36s
+Epoch: 211
+Training:	Loss: 0.1408	LR: 0.010000	Time: 30.90s
+Testing:	Loss: 0.0103	Acc: 0.6963	Time:1.90s
+Epoch: 212
+Training:	Loss: 0.1407	LR: 0.010000	Time: 29.44s
+Testing:	Loss: 0.0102	Acc: 0.7088	Time:1.89s
+Epoch: 213
+Training:	Loss: 0.1388	LR: 0.010000	Time: 30.11s
+Testing:	Loss: 0.0100	Acc: 0.7107	Time:1.99s
+Epoch: 214
+Training:	Loss: 0.1382	LR: 0.010000	Time: 29.77s
+Testing:	Loss: 0.0103	Acc: 0.6937	Time:1.99s
+Epoch: 215
+Training:	Loss: 0.1378	LR: 0.010000	Time: 29.26s
+Testing:	Loss: 0.0102	Acc: 0.7013	Time:1.94s
+Epoch: 216
+Training:	Loss: 0.1373	LR: 0.010000	Time: 30.05s
+Testing:	Loss: 0.0098	Acc: 0.7157	Time:2.01s
+Epoch: 217
+Training:	Loss: 0.1422	LR: 0.010000	Time: 28.89s
+Testing:	Loss: 0.0102	Acc: 0.7030	Time:1.96s
+Epoch: 218
+Training:	Loss: 0.1330	LR: 0.010000	Time: 29.00s
+Testing:	Loss: 0.0103	Acc: 0.7041	Time:2.06s
+Epoch: 219
+Training:	Loss: 0.1419	LR: 0.010000	Time: 29.14s
+Testing:	Loss: 0.0098	Acc: 0.7036	Time:2.02s
+Epoch: 220
+Training:	Loss: 0.1368	LR: 0.010000	Time: 31.93s
+Testing:	Loss: 0.0101	Acc: 0.7069	Time:1.97s
+Epoch: 221
+Training:	Loss: 0.1426	LR: 0.010000	Time: 29.00s
+Testing:	Loss: 0.0103	Acc: 0.7027	Time:2.04s
+Epoch: 222
+Training:	Loss: 0.1294	LR: 0.010000	Time: 29.67s
+Testing:	Loss: 0.0105	Acc: 0.6952	Time:1.98s
+Epoch: 223
+Training:	Loss: 0.1277	LR: 0.010000	Time: 32.17s
+Testing:	Loss: 0.0103	Acc: 0.6980	Time:1.98s
+Epoch: 224
+Training:	Loss: 0.1294	LR: 0.010000	Time: 29.50s
+Testing:	Loss: 0.0099	Acc: 0.7086	Time:1.97s
+Epoch: 225
+Training:	Loss: 0.1234	LR: 0.010000	Time: 30.06s
+Testing:	Loss: 0.0101	Acc: 0.7047	Time:1.93s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/225_regular.pth
+Epoch: 226
+Training:	Loss: 0.0624	LR: 0.001000	Time: 30.73s
+Testing:	Loss: 0.0085	Acc: 0.7439	Time:2.02s
+Epoch: 227
+Training:	Loss: 0.0409	LR: 0.001000	Time: 29.01s
+Testing:	Loss: 0.0084	Acc: 0.7473	Time:1.97s
+Epoch: 228
+Training:	Loss: 0.0331	LR: 0.001000	Time: 29.37s
+Testing:	Loss: 0.0083	Acc: 0.7510	Time:1.93s
+Epoch: 229
+Training:	Loss: 0.0287	LR: 0.001000	Time: 29.39s
+Testing:	Loss: 0.0083	Acc: 0.7501	Time:1.96s
+Epoch: 230
+Training:	Loss: 0.0269	LR: 0.001000	Time: 31.60s
+Testing:	Loss: 0.0083	Acc: 0.7512	Time:1.97s
+Epoch: 231
+Training:	Loss: 0.0245	LR: 0.001000	Time: 29.44s
+Testing:	Loss: 0.0083	Acc: 0.7507	Time:1.94s
+Epoch: 232
+Training:	Loss: 0.0235	LR: 0.001000	Time: 31.90s
+Testing:	Loss: 0.0082	Acc: 0.7515	Time:1.97s
+Epoch: 233
+Training:	Loss: 0.0220	LR: 0.001000	Time: 29.41s
+Testing:	Loss: 0.0082	Acc: 0.7528	Time:5.07s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/233_best.pth
+Epoch: 234
+Training:	Loss: 0.0217	LR: 0.001000	Time: 30.06s
+Testing:	Loss: 0.0081	Acc: 0.7529	Time:6.60s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/234_best.pth
+Epoch: 235
+Training:	Loss: 0.0195	LR: 0.001000	Time: 31.47s
+Testing:	Loss: 0.0082	Acc: 0.7523	Time:4.29s
+Epoch: 236
+Training:	Loss: 0.0189	LR: 0.001000	Time: 31.27s
+Testing:	Loss: 0.0081	Acc: 0.7554	Time:3.73s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/236_best.pth
+Epoch: 237
+Training:	Loss: 0.0188	LR: 0.001000	Time: 29.34s
+Testing:	Loss: 0.0081	Acc: 0.7557	Time:1.93s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/237_best.pth
+Epoch: 238
+Training:	Loss: 0.0183	LR: 0.001000	Time: 29.72s
+Testing:	Loss: 0.0080	Acc: 0.7547	Time:1.96s
+Epoch: 239
+Training:	Loss: 0.0178	LR: 0.001000	Time: 30.95s
+Testing:	Loss: 0.0081	Acc: 0.7529	Time:1.91s
+Epoch: 240
+Training:	Loss: 0.0171	LR: 0.001000	Time: 29.72s
+Testing:	Loss: 0.0081	Acc: 0.7563	Time:1.95s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/240_best.pth
+Epoch: 241
+Training:	Loss: 0.0176	LR: 0.001000	Time: 29.25s
+Testing:	Loss: 0.0080	Acc: 0.7557	Time:2.22s
+Epoch: 242
+Training:	Loss: 0.0171	LR: 0.001000	Time: 29.26s
+Testing:	Loss: 0.0080	Acc: 0.7563	Time:2.01s
+Epoch: 243
+Training:	Loss: 0.0166	LR: 0.001000	Time: 29.12s
+Testing:	Loss: 0.0080	Acc: 0.7545	Time:1.94s
+Epoch: 244
+Training:	Loss: 0.0165	LR: 0.001000	Time: 29.21s
+Testing:	Loss: 0.0080	Acc: 0.7540	Time:1.93s
+Epoch: 245
+Training:	Loss: 0.0156	LR: 0.001000	Time: 28.92s
+Testing:	Loss: 0.0081	Acc: 0.7562	Time:1.94s
+Epoch: 246
+Training:	Loss: 0.0159	LR: 0.001000	Time: 29.07s
+Testing:	Loss: 0.0081	Acc: 0.7552	Time:1.94s
+Epoch: 247
+Training:	Loss: 0.0156	LR: 0.001000	Time: 29.47s
+Testing:	Loss: 0.0080	Acc: 0.7566	Time:2.00s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/247_best.pth
+Epoch: 248
+Training:	Loss: 0.0155	LR: 0.001000	Time: 28.95s
+Testing:	Loss: 0.0079	Acc: 0.7576	Time:2.00s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/248_best.pth
+Epoch: 249
+Training:	Loss: 0.0152	LR: 0.001000	Time: 29.36s
+Testing:	Loss: 0.0080	Acc: 0.7562	Time:1.99s
+Epoch: 250
+Training:	Loss: 0.0146	LR: 0.001000	Time: 30.02s
+Testing:	Loss: 0.0080	Acc: 0.7566	Time:2.00s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/250_regular.pth
+Epoch: 251
+Training:	Loss: 0.0148	LR: 0.001000	Time: 30.23s
+Testing:	Loss: 0.0080	Acc: 0.7574	Time:2.00s
+Epoch: 252
+Training:	Loss: 0.0140	LR: 0.001000	Time: 29.36s
+Testing:	Loss: 0.0079	Acc: 0.7580	Time:2.03s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/252_best.pth
+Epoch: 253
+Training:	Loss: 0.0138	LR: 0.001000	Time: 31.75s
+Testing:	Loss: 0.0079	Acc: 0.7577	Time:6.00s
+Epoch: 254
+Training:	Loss: 0.0141	LR: 0.001000	Time: 29.10s
+Testing:	Loss: 0.0079	Acc: 0.7554	Time:1.99s
+Epoch: 255
+Training:	Loss: 0.0142	LR: 0.001000	Time: 29.56s
+Testing:	Loss: 0.0079	Acc: 0.7595	Time:1.96s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/255_best.pth
+Epoch: 256
+Training:	Loss: 0.0135	LR: 0.001000	Time: 29.90s
+Testing:	Loss: 0.0079	Acc: 0.7588	Time:1.94s
+Epoch: 257
+Training:	Loss: 0.0134	LR: 0.001000	Time: 29.06s
+Testing:	Loss: 0.0079	Acc: 0.7582	Time:1.98s
+Epoch: 258
+Training:	Loss: 0.0135	LR: 0.001000	Time: 30.11s
+Testing:	Loss: 0.0079	Acc: 0.7604	Time:1.98s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/258_best.pth
+Epoch: 259
+Training:	Loss: 0.0133	LR: 0.001000	Time: 28.74s
+Testing:	Loss: 0.0079	Acc: 0.7603	Time:1.97s
+Epoch: 260
+Training:	Loss: 0.0130	LR: 0.001000	Time: 30.02s
+Testing:	Loss: 0.0078	Acc: 0.7595	Time:1.95s
+Epoch: 261
+Training:	Loss: 0.0130	LR: 0.001000	Time: 32.89s
+Testing:	Loss: 0.0079	Acc: 0.7587	Time:1.96s
+Epoch: 262
+Training:	Loss: 0.0129	LR: 0.001000	Time: 32.23s
+Testing:	Loss: 0.0078	Acc: 0.7582	Time:1.98s
+Epoch: 263
+Training:	Loss: 0.0129	LR: 0.001000	Time: 30.13s
+Testing:	Loss: 0.0078	Acc: 0.7579	Time:1.98s
+Epoch: 264
+Training:	Loss: 0.0124	LR: 0.001000	Time: 29.74s
+Testing:	Loss: 0.0079	Acc: 0.7594	Time:1.98s
+Epoch: 265
+Training:	Loss: 0.0132	LR: 0.001000	Time: 30.86s
+Testing:	Loss: 0.0079	Acc: 0.7597	Time:1.96s
+Epoch: 266
+Training:	Loss: 0.0125	LR: 0.001000	Time: 29.57s
+Testing:	Loss: 0.0077	Acc: 0.7592	Time:1.98s
+Epoch: 267
+Training:	Loss: 0.0120	LR: 0.001000	Time: 30.39s
+Testing:	Loss: 0.0078	Acc: 0.7592	Time:1.98s
+Epoch: 268
+Training:	Loss: 0.0120	LR: 0.001000	Time: 31.79s
+Testing:	Loss: 0.0077	Acc: 0.7590	Time:2.17s
+Epoch: 269
+Training:	Loss: 0.0122	LR: 0.001000	Time: 29.63s
+Testing:	Loss: 0.0077	Acc: 0.7599	Time:2.16s
+Epoch: 270
+Training:	Loss: 0.0124	LR: 0.001000	Time: 29.76s
+Testing:	Loss: 0.0077	Acc: 0.7616	Time:1.99s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/270_best.pth
+Epoch: 271
+Training:	Loss: 0.0123	LR: 0.001000	Time: 29.06s
+Testing:	Loss: 0.0079	Acc: 0.7579	Time:1.95s
+Epoch: 272
+Training:	Loss: 0.0123	LR: 0.001000	Time: 29.86s
+Testing:	Loss: 0.0077	Acc: 0.7607	Time:1.98s
+Epoch: 273
+Training:	Loss: 0.0118	LR: 0.001000	Time: 29.79s
+Testing:	Loss: 0.0078	Acc: 0.7619	Time:1.99s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/273_best.pth
+Epoch: 274
+Training:	Loss: 0.0123	LR: 0.001000	Time: 30.62s
+Testing:	Loss: 0.0077	Acc: 0.7593	Time:1.99s
+Epoch: 275
+Training:	Loss: 0.0123	LR: 0.001000	Time: 29.52s
+Testing:	Loss: 0.0078	Acc: 0.7614	Time:2.00s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/275_regular.pth
+Epoch: 276
+Training:	Loss: 0.0122	LR: 0.001000	Time: 31.25s
+Testing:	Loss: 0.0077	Acc: 0.7613	Time:1.93s
+Epoch: 277
+Training:	Loss: 0.0120	LR: 0.001000	Time: 30.26s
+Testing:	Loss: 0.0077	Acc: 0.7630	Time:1.97s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/277_best.pth
+Epoch: 278
+Training:	Loss: 0.0120	LR: 0.001000	Time: 30.79s
+Testing:	Loss: 0.0078	Acc: 0.7617	Time:2.11s
+Epoch: 279
+Training:	Loss: 0.0120	LR: 0.001000	Time: 31.34s
+Testing:	Loss: 0.0076	Acc: 0.7609	Time:4.37s
+Epoch: 280
+Training:	Loss: 0.0121	LR: 0.001000	Time: 31.27s
+Testing:	Loss: 0.0077	Acc: 0.7629	Time:2.06s
+Epoch: 281
+Training:	Loss: 0.0121	LR: 0.001000	Time: 30.02s
+Testing:	Loss: 0.0077	Acc: 0.7626	Time:1.94s
+Epoch: 282
+Training:	Loss: 0.0121	LR: 0.001000	Time: 30.22s
+Testing:	Loss: 0.0077	Acc: 0.7634	Time:1.97s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/282_best.pth
+Epoch: 283
+Training:	Loss: 0.0118	LR: 0.001000	Time: 29.01s
+Testing:	Loss: 0.0077	Acc: 0.7633	Time:1.98s
+Epoch: 284
+Training:	Loss: 0.0121	LR: 0.001000	Time: 29.51s
+Testing:	Loss: 0.0077	Acc: 0.7624	Time:1.98s
+Epoch: 285
+Training:	Loss: 0.0121	LR: 0.001000	Time: 29.29s
+Testing:	Loss: 0.0078	Acc: 0.7621	Time:1.96s
+Epoch: 286
+Training:	Loss: 0.0116	LR: 0.001000	Time: 29.69s
+Testing:	Loss: 0.0077	Acc: 0.7608	Time:1.96s
+Epoch: 287
+Training:	Loss: 0.0120	LR: 0.001000	Time: 32.17s
+Testing:	Loss: 0.0077	Acc: 0.7617	Time:1.97s
+Epoch: 288
+Training:	Loss: 0.0118	LR: 0.001000	Time: 31.14s
+Testing:	Loss: 0.0076	Acc: 0.7623	Time:1.95s
+Epoch: 289
+Training:	Loss: 0.0119	LR: 0.001000	Time: 30.34s
+Testing:	Loss: 0.0077	Acc: 0.7613	Time:2.01s
+Epoch: 290
+Training:	Loss: 0.0114	LR: 0.001000	Time: 30.54s
+Testing:	Loss: 0.0077	Acc: 0.7642	Time:1.99s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/290_best.pth
+Epoch: 291
+Training:	Loss: 0.0115	LR: 0.001000	Time: 29.51s
+Testing:	Loss: 0.0076	Acc: 0.7634	Time:1.98s
+Epoch: 292
+Training:	Loss: 0.0119	LR: 0.001000	Time: 29.75s
+Testing:	Loss: 0.0076	Acc: 0.7644	Time:1.98s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/292_best.pth
+Epoch: 293
+Training:	Loss: 0.0118	LR: 0.001000	Time: 28.94s
+Testing:	Loss: 0.0076	Acc: 0.7634	Time:1.95s
+Epoch: 294
+Training:	Loss: 0.0116	LR: 0.001000	Time: 30.24s
+Testing:	Loss: 0.0076	Acc: 0.7662	Time:1.96s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/294_best.pth
+Epoch: 295
+Training:	Loss: 0.0117	LR: 0.001000	Time: 29.60s
+Testing:	Loss: 0.0076	Acc: 0.7634	Time:1.86s
+Epoch: 296
+Training:	Loss: 0.0119	LR: 0.001000	Time: 27.04s
+Testing:	Loss: 0.0076	Acc: 0.7635	Time:1.89s
+Epoch: 297
+Training:	Loss: 0.0121	LR: 0.001000	Time: 27.01s
+Testing:	Loss: 0.0076	Acc: 0.7642	Time:1.84s
+Epoch: 298
+Training:	Loss: 0.0114	LR: 0.001000	Time: 26.88s
+Testing:	Loss: 0.0076	Acc: 0.7641	Time:1.89s
+Epoch: 299
+Training:	Loss: 0.0121	LR: 0.001000	Time: 26.79s
+Testing:	Loss: 0.0076	Acc: 0.7638	Time:1.88s
+Epoch: 300
+Training:	Loss: 0.0119	LR: 0.001000	Time: 26.73s
+Testing:	Loss: 0.0077	Acc: 0.7632	Time:1.85s
+saving weights file to ./model_ResNet18_cifar100_b128_ep300_g0.1/300_regular.pth

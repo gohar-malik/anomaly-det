@@ -67,11 +67,11 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-gpu', type=int, default=None, help='gpu id to use')
-    parser.add_argument('-b', type=int, default=256, help='batch size for dataloader')
-    parser.add_argument('-epochs', type=int, default=200, help='number of epochs to train')
+    parser.add_argument('-b', type=int, default=128, help='batch size for dataloader')
+    parser.add_argument('-epochs', type=int, default=300, help='number of epochs to train')
     parser.add_argument('-lr', type=float, default=0.1, help='initial learning rate')
-    parser.add_argument('-ckpt', default='./model_ResNet18_cifar10',help='directory of model for saving checkpoint')
-    parser.add_argument('-ckptepoch', type=int, default=10 ,help='directory of model for saving checkpoint')
+    parser.add_argument('-ckpt', default='./model_ResNet18_cifar100_b128_ep300_g0.1',help='directory of model for saving checkpoint')
+    parser.add_argument('-ckptepoch', type=int, default=25 ,help='directory of model for saving checkpoint')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     args = parser.parse_args()
     
@@ -108,10 +108,10 @@ if __name__ == '__main__':
     cifar100_test_loader = DataLoader(cifar100_test, shuffle=True, num_workers=4, batch_size=args.b)
 
     ### training config
-    milestones = [60, 120, 160]
+    milestones = [150,225] #[60, 120, 160]
     loss_function = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4)
-    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=0.2) #learning rate decay
+    optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4) #2e-4
+    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=0.1) #0.2
     iter_per_epoch = len(cifar100_training_loader)
 
     ### create checkpoint folder to save model
@@ -122,11 +122,13 @@ if __name__ == '__main__':
 
     best_acc = 0.0
     for epoch in range(1, args.epochs + 1):
+
         train(epoch)
         acc = eval_training(epoch)
+        train_scheduler.step(epoch)
 
         #start to save best performance model after learning rate decay to 0.01
-        if epoch >milestones[1] and best_acc < acc:
+        if epoch > milestones[0] and best_acc < acc:
             weights_path = checkpoint_path.format(epoch=epoch, type='best')
             print('saving weights file to {}'.format(weights_path))
             torch.save(net.state_dict(), weights_path)
