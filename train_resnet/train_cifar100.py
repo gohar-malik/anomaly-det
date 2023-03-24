@@ -15,6 +15,33 @@ from torch.utils.data import DataLoader
 
 from resnet import ResNet18
 
+def init_weights(net):
+    """the weights of conv layer and fully connected layers 
+    are both initilized with Xavier algorithm, In particular,
+    we set the parameters to random values uniformly drawn from [-a, a]
+    where a = sqrt(6 * (din + dout)), for batch normalization 
+    layers, y=1, b=0, all bias initialized to 0.
+    """
+    for m in net.modules():
+        # print(type(m))
+        if isinstance(m, nn.Conv2d):
+            nn.init.xavier_uniform_(m.weight)
+            #nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+            if m.bias is not None:
+                nn.init.constant_(m.bias, 0)
+            
+        elif isinstance(m, nn.BatchNorm2d):
+            nn.init.constant_(m.weight, 1)
+            nn.init.constant_(m.bias, 0)
+        
+        elif isinstance(m, nn.Linear):
+            nn.init.xavier_uniform_(m.weight)
+
+            if m.bias is not None:
+                nn.init.constant_(m.bias, 0)
+
+    return net
+
 def train(epoch):
 
     start = time.time()
@@ -83,7 +110,8 @@ if __name__ == '__main__':
 
     ### network initialize
     net = ResNet18(num_classes=100).to(device)
-
+    net = init_weights(net)
+    
     #### data loaders
     mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
     std = (0.2673342858792401, 0.2564384629170883, 0.27615047132568404)
