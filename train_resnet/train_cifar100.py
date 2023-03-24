@@ -14,33 +14,8 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 
 from resnet import ResNet18
-
-def init_weights(net):
-    """the weights of conv layer and fully connected layers 
-    are both initilized with Xavier algorithm, In particular,
-    we set the parameters to random values uniformly drawn from [-a, a]
-    where a = sqrt(6 * (din + dout)), for batch normalization 
-    layers, y=1, b=0, all bias initialized to 0.
-    """
-    for m in net.modules():
-        # print(type(m))
-        if isinstance(m, nn.Conv2d):
-            nn.init.xavier_uniform_(m.weight)
-            #nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
-            if m.bias is not None:
-                nn.init.constant_(m.bias, 0)
-            
-        elif isinstance(m, nn.BatchNorm2d):
-            nn.init.constant_(m.weight, 1)
-            nn.init.constant_(m.bias, 0)
-        
-        elif isinstance(m, nn.Linear):
-            nn.init.xavier_uniform_(m.weight)
-
-            if m.bias is not None:
-                nn.init.constant_(m.bias, 0)
-
-    return net
+from utils import init_weights, split_weights
+from utils import WarmUpLR
 
 def train(epoch):
 
@@ -58,6 +33,9 @@ def train(epoch):
         total_loss += loss.item()
         loss.backward()
         optimizer.step()
+
+        if epoch <= warm:
+            warmup_scheduler.step()
 
     finish = time.time()
     print(f'Epoch: {epoch}')
@@ -97,7 +75,7 @@ if __name__ == '__main__':
     parser.add_argument('-b', type=int, default=128, help='batch size for dataloader')
     parser.add_argument('-epochs', type=int, default=300, help='number of epochs to train')
     parser.add_argument('-lr', type=float, default=0.1, help='initial learning rate')
-    parser.add_argument('-ckpt', default='./model_ResNet18_cifar100_b128_ep300_g0.1',help='directory of model for saving checkpoint')
+    parser.add_argument('-ckpt', default='./model_ResNet18_cifar100_xavier_wd_w5',help='directory of model for saving checkpoint')
     parser.add_argument('-ckptepoch', type=int, default=25 ,help='directory of model for saving checkpoint')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     args = parser.parse_args()
@@ -136,12 +114,17 @@ if __name__ == '__main__':
     cifar100_test_loader = DataLoader(cifar100_test, shuffle=True, num_workers=4, batch_size=args.b)
 
     ### training config
-    milestones = [150,225] #[60, 120, 160]
     loss_function = nn.CrossEntropyLoss()
-    optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4) #2e-4
-    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=0.1) #0.2
-    iter_per_epoch = len(cifar100_training_loader)
+    params = split_weights(net)
+    optimizer = optim.SGD(params, lr=args.lr, momentum=0.9, weight_decay=5e-4) #2e-4
 
+    warm = 5
+    iter_per_epoch = len(cifar100_training_loader)
+    warmup_scheduler = WarmUpLR(optimizer, iter_per_epoch * warm)
+
+    milestones = [150,225] #[60, 120, 160]
+    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=0.1) #0.2
+    
     ### create checkpoint folder to save model
     checkpoint_path = args.ckpt
     if not os.path.exists(checkpoint_path):
@@ -150,10 +133,12 @@ if __name__ == '__main__':
 
     best_acc = 0.0
     for epoch in range(1, args.epochs + 1):
-
+        
+        if epoch > warm:
+            train_scheduler.step(epoch)
+        
         train(epoch)
         acc = eval_training(epoch)
-        train_scheduler.step(epoch)
 
         #start to save best performance model after learning rate decay to 0.01
         if epoch > milestones[0] and best_acc < acc:
