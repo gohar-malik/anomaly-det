@@ -11,7 +11,7 @@ from resnet import ResNet18
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-weights', type=str, required=True, help='the weights file you want to test')
+    parser.add_argument('-weights', type=str, default="./checkpoints/model_ResNet18_cifar100_best/294_best.pth", help='the weights file you want to test')
     parser.add_argument('-gpu', type=int, default=0, help='gpu id to use')
     parser.add_argument('-b', type=int, default=16, help='batch size for dataloader')
     args = parser.parse_args()
@@ -64,6 +64,7 @@ if __name__ == '__main__':
             correct_1 += correct[:, :1].sum()
 
     print()
-    print("Top 1 err: ", 1 - correct_1 / len(cifar100_test_loader.dataset))
-    print("Top 5 err: ", 1 - correct_5 / len(cifar100_test_loader.dataset))
+    print(f"Accuracy:  {(correct_1 / len(cifar100_test_loader.dataset) *100).item():.2f}%")
+    print(f"Top 1 err: {(1 - correct_1 / len(cifar100_test_loader.dataset)).item():.4f}")
+    print(f"Top 5 err: {(1 - correct_5 / len(cifar100_test_loader.dataset)).item():.4f}")
     print("Parameter numbers: {}".format(sum(p.numel() for p in net.parameters())))

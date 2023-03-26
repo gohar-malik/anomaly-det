@@ -84,23 +84,26 @@ if __name__ == '__main__':
     parser.add_argument('-nbd', action='store_true', default=False, help='whether to use no bias decay')
     parser.add_argument('-warm', type=int, default=0, help='number of warmup steps to use for LR')
     parser.add_argument('-trainsched', default='multistep', help='LR scheduler to use: [multistep or onecycle]')
-    parser.add_argument('-ckpt', default='./model_ResNet18_cifar100',help='directory of model for saving checkpoint')
+    parser.add_argument('-ckpt', default='./checkpoints/model_ResNet18_cifar100',help='directory of model for saving checkpoint')
     parser.add_argument('-ckptepoch', type=int, default=25 ,help='directory of model for saving checkpoint')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     args = parser.parse_args()
 
     print(f"Configuration: {args}\n")
 
+    
     ### device config
     use_cuda = (args.gpu is not None) and (torch.cuda.is_available())
     torch.manual_seed(args.seed)
     device = torch.device(f"cuda:{args.gpu}" if use_cuda else "cpu")
     print(f"Using Device: {device}")
 
+    
     ### network initialize
     net = ResNet18(num_classes=100).to(device)
     if args.xavier:
         net = init_weights(net)
+    
     
     #### data loaders
     mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
@@ -125,15 +128,16 @@ if __name__ == '__main__':
     cifar100_test = torchvision.datasets.CIFAR100(root='./data', train=False, download=True, transform=transform_test)
     cifar100_test_loader = DataLoader(cifar100_test, shuffle=True, num_workers=4, batch_size=args.b)
 
+    
     ### training config
     loss_function = nn.CrossEntropyLoss()
 
     params = net.parameters()
     if args.nbd:
         params = split_weights(net)
-    optimizer = {"sgd": optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4),
-                 "amp": AMP(net.parameters(), lr=args.lr, epsilon=0.5, momentum=0.9, weight_decay=5e-4),
-                 "lars": LARS(net.parameters(), lr=0.04, weight_decay=5e-4)}[args.optim]
+    optimizer = {"sgd": optim.SGD(params, lr=args.lr, momentum=0.9, weight_decay=5e-4),
+                 "amp": AMP(params, lr=args.lr, epsilon=0.5, momentum=0.9, weight_decay=5e-4),
+                 "lars": LARS(params, lr=0.04, weight_decay=5e-4)}[args.optim]
 
     warm = args.warm
     warmup_ratio = warm * 1.0 / args.epochs
@@ -149,12 +153,15 @@ if __name__ == '__main__':
                         pct_start=warmup_ratio, div_factor=25, final_div_factor=10, cycle_momentum=False,
                         base_momentum=0.9, max_momentum=0.9)}[args.trainsched]
     
+    
     ### create checkpoint folder to save model
     checkpoint_path = args.ckpt
     if not os.path.exists(checkpoint_path):
         os.makedirs(checkpoint_path)
     checkpoint_path = os.path.join(checkpoint_path, '{epoch}_{type}.pth')
 
+
+    ### training loop
     best_acc = 0.0
     for epoch in range(1, args.epochs + 1):
         
