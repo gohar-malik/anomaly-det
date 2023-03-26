@@ -14,6 +14,7 @@ if __name__ == '__main__':
     parser.add_argument('-weights', type=str, default="./checkpoints/model_ResNet18_cifar100_best/294_best.pth", help='the weights file you want to test')
     parser.add_argument('-gpu', type=int, default=0, help='gpu id to use')
     parser.add_argument('-b', type=int, default=16, help='batch size for dataloader')
+    parser.add_argument('-savept', action="store_true", default=False, help='whether to save .pt file')
     args = parser.parse_args()
 
     ### device config
@@ -38,6 +39,8 @@ if __name__ == '__main__':
     net.load_state_dict(torch.load(args.weights))
     # print(net)
     net.eval()
+    if args.savept:
+        torch.save(net, './checkpoints/cifar100.pt')
 
     correct_1 = 0.0
     correct_5 = 0.0
