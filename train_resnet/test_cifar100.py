@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-weights', type=str, required=True, help='the weights file you want to test')
-    parser.add_argument('-gpu', type=int, default=None, help='gpu id to use')
+    parser.add_argument('-gpu', type=int, default=0, help='gpu id to use')
     parser.add_argument('-b', type=int, default=16, help='batch size for dataloader')
     args = parser.parse_args()
 

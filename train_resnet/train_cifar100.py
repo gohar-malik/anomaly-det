@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader
 
 from resnet import ResNet18
 from utils import init_weights, split_weights
-from utils import WarmUpLR
+from utils import WarmUpLR, AMP, LARS
 
 def train(epoch):
 
@@ -26,14 +26,18 @@ def train(epoch):
 
         labels = labels.to(device)
         images = images.to(device)
-
+        
+        # def closure():
         optimizer.zero_grad()
         outputs = net(images)
         loss = loss_function(outputs, labels)
-        total_loss += loss.item()
         loss.backward()
+            # return outputs, loss
+        
+        # outputs, loss = optimizer.step(closure)
         optimizer.step()
-
+        total_loss += loss.item()
+        
         if epoch <= warm:
             warmup_scheduler.step()
 
@@ -71,15 +75,22 @@ def eval_training(epoch=0):
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-gpu', type=int, default=None, help='gpu id to use')
+    parser.add_argument('-gpu', type=int, default=0, help='gpu id to use')
     parser.add_argument('-b', type=int, default=128, help='batch size for dataloader')
     parser.add_argument('-epochs', type=int, default=300, help='number of epochs to train')
     parser.add_argument('-lr', type=float, default=0.1, help='initial learning rate')
-    parser.add_argument('-ckpt', default='./model_ResNet18_cifar100_xavier_wd_w5',help='directory of model for saving checkpoint')
+    parser.add_argument('-optim', default='sgd',help='optimizer to use: [sgd, amp or lars]')
+    parser.add_argument('-xavier', action='store_true', default=False, help='whether to use xavier init')
+    parser.add_argument('-nbd', action='store_true', default=False, help='whether to use no bias decay')
+    parser.add_argument('-warm', type=int, default=0, help='number of warmup steps to use for LR')
+    parser.add_argument('-trainsched', default='multistep', help='LR scheduler to use: [multistep or onecycle]')
+    parser.add_argument('-ckpt', default='./model_ResNet18_cifar100',help='directory of model for saving checkpoint')
     parser.add_argument('-ckptepoch', type=int, default=25 ,help='directory of model for saving checkpoint')
     parser.add_argument('--seed', type=int, default=42, help='random seed')
     args = parser.parse_args()
-    
+
+    print(f"Configuration: {args}\n")
+
     ### device config
     use_cuda = (args.gpu is not None) and (torch.cuda.is_available())
     torch.manual_seed(args.seed)
@@ -88,7 +99,8 @@ if __name__ == '__main__':
 
     ### network initialize
     net = ResNet18(num_classes=100).to(device)
-    net = init_weights(net)
+    if args.xavier:
+        net = init_weights(net)
     
     #### data loaders
     mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
@@ -115,15 +127,27 @@ if __name__ == '__main__':
 
     ### training config
     loss_function = nn.CrossEntropyLoss()
-    params = split_weights(net)
-    optimizer = optim.SGD(params, lr=args.lr, momentum=0.9, weight_decay=5e-4) #2e-4
 
-    warm = 5
+    params = net.parameters()
+    if args.nbd:
+        params = split_weights(net)
+    optimizer = {"sgd": optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4),
+                 "amp": AMP(net.parameters(), lr=args.lr, epsilon=0.5, momentum=0.9, weight_decay=5e-4),
+                 "lars": LARS(net.parameters(), lr=0.04, weight_decay=5e-4)}[args.optim]
+
+    warm = args.warm
+    warmup_ratio = warm * 1.0 / args.epochs
     iter_per_epoch = len(cifar100_training_loader)
     warmup_scheduler = WarmUpLR(optimizer, iter_per_epoch * warm)
 
-    milestones = [150,225] #[60, 120, 160]
-    train_scheduler = optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, gamma=0.1) #0.2
+    milestones = [150,225] #[100,150,180,210,240,270] #[60, 120, 160]
+
+    train_scheduler = {"multistep": optim.lr_scheduler.MultiStepLR(optimizer, milestones=milestones, 
+                                                                   gamma=0.1), #0.2,
+                       "onecycle": optim.lr_scheduler.OneCycleLR(optimizer, max_lr=args.lr, 
+                        steps_per_epoch=iter_per_epoch, epochs=int(args.epochs*1.0), anneal_strategy='linear', 
+                        pct_start=warmup_ratio, div_factor=25, final_div_factor=10, cycle_momentum=False,
+                        base_momentum=0.9, max_momentum=0.9)}[args.trainsched]
     
     ### create checkpoint folder to save model
     checkpoint_path = args.ckpt
@@ -134,11 +158,10 @@ if __name__ == '__main__':
     best_acc = 0.0
     for epoch in range(1, args.epochs + 1):
         
-        if epoch > warm:
-            train_scheduler.step(epoch)
-        
         train(epoch)
         acc = eval_training(epoch)
+        if epoch > warm:
+            train_scheduler.step(epoch)
 
         #start to save best performance model after learning rate decay to 0.01
         if epoch > milestones[0] and best_acc < acc:
