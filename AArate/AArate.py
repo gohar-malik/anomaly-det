@@ -32,7 +32,7 @@ parser.add_argument('--state-path', type=Path, default=None)
 
 args = parser.parse_args()
 
-#edit below 2 lines to change norm, model and dataset
+#edit below lines to change norm, model and dataset
 args.norm = 'Linf' #choose either 'Linf' or 'L2'
 args.model = './cifar10.pth'
 dataset = 'cifar10' #choose either 'cifar10' or 'cifar100'
@@ -84,4 +84,4 @@ y_test = torch.cat(l, 0)
 with torch.no_grad():
     adv_complete = adversary.run_standard_evaluation(x_test[:args.n_ex], y_test[:args.n_ex],bs=args.batch_size, state_path=args.state_path)
 
-    torch.save({'adv_complete': adv_complete}, '{}/{}_{}_1_{}_eps_{:.5f}.pth'.format(args.save_dir, 'aa', args.version, adv_complete.shape[0], args.epsilon))
+    torch.save({'adv_complete': adv_complete}, '{}/{}_{}_1_{}_eps_{:.5f}_{}_{}.pth'.format(args.save_dir, 'aa', args.version, adv_complete.shape[0], args.epsilon, args.norm, args.model))
