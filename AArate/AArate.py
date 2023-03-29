@@ -33,7 +33,6 @@ parser.add_argument('--state-path', type=Path, default=None)
 args = parser.parse_args()
 
 #edit below 2 lines to change norm, model and dataset
-classes = 10 #change to 10 for cifar 10 and 100 for cifar 100
 args.norm = 'Linf' #choose either 'Linf' or 'L2'
 args.model = './cifar10.pt'
 dataset = 'cifar10' #choose either 'cifar10' or 'cifar100'
@@ -43,19 +42,21 @@ use_cuda = (args.gpu is not None) and (torch.cuda.is_available())
 device = torch.device(f"cuda:{args.gpu}" if use_cuda else "cpu")
 print(f"Using Device: {device}")
 
+if dataset == 'cifar10':
+    classes = 10
+    mean = (0.49139968, 0.48215827 ,0.44653124)
+    std = (0.24703233,0.24348505,0.26158768)
+elif dataset == 'cifar100':
+    classes = 100
+    mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
+    std = (0.2673342858792401, 0.2564384629170883, 0.27615047132568404)
+
 #load .pt model
 model = ResNet18(num_classes=classes)
 ckpt = torch.load(args.model)
 model.load_state_dict(ckpt)
 model.cuda()
 model.eval()
-
-if dataset == 'cifar10':
-    mean = (0.49139968, 0.48215827 ,0.44653124)
-    std = (0.24703233,0.24348505,0.26158768)
-elif dataset == 'cifar100':
-    mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
-    std = (0.2673342858792401, 0.2564384629170883, 0.27615047132568404)
 
 transform_list = [
     transforms.ToTensor(),
