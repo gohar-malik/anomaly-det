@@ -53,7 +53,7 @@ elif dataset == 'cifar100':
 
 #load .pt model
 model = ResNet18(num_classes=classes)
-ckpt = torch.load(args.model)
+ckpt = torch.load(args.model,map_location='cuda:0')
 model.load_state_dict(ckpt)
 model.cuda()
 model.eval()
