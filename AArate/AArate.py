@@ -22,7 +22,7 @@ parser.add_argument('-gpu', type=int, default=0, help='gpu id to use')
 parser.add_argument('--data_dir', type=str, default='./data')
 parser.add_argument('--norm', type=str, default='Linf')
 parser.add_argument('--epsilon', type=float, default=8./255.)
-parser.add_argument('--model', type=str, default='./model_test.pt')
+parser.add_argument('--model', type=str, default='./model_test.pth')
 parser.add_argument('--n_ex', type=int, default=1000)
 parser.add_argument('--save_dir', type=str, default='./results')
 parser.add_argument('--batch_size', type=int, default=500)
@@ -34,7 +34,7 @@ args = parser.parse_args()
 
 #edit below 2 lines to change norm, model and dataset
 args.norm = 'Linf' #choose either 'Linf' or 'L2'
-args.model = './cifar10.pt'
+args.model = './cifar10.pth'
 dataset = 'cifar10' #choose either 'cifar10' or 'cifar100'
 
 ### device config
