@@ -63,7 +63,7 @@ trainset = data.DataLoader(item, batch_size=1000, shuffle=False, num_workers=0)
 
 clf_name = 'LUNAR'
 clf = LUNAR()
-#clf.fit(trainset)
+clf.fit(trainset)
 
 test_pred = clf.predict(testset)  # outlier labels (0 or 1)
 test_scores = clf.decision_function(testset)  # outlier scores
