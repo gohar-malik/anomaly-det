@@ -85,3 +85,5 @@ with torch.no_grad():
     adv_complete = adversary.run_standard_evaluation(x_test[:args.n_ex], y_test[:args.n_ex],bs=args.batch_size, state_path=args.state_path)
 
     torch.save({'adv_complete': adv_complete}, '{}/{}_{}_1_{}_eps_{:.5f}_{}_{}.pth'.format(args.save_dir, 'aa', args.version, adv_complete.shape[0], args.epsilon, args.norm, dataset))
+
+    torch.save(adv_complete, args.save_dir)
