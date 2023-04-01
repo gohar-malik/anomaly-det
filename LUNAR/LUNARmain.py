@@ -65,6 +65,9 @@ clf_name = 'LUNAR'
 clf = LUNAR()
 clf.fit(trainset)
 
-y_test_pred = clf.predict(testset)  # outlier labels (0 or 1)
-y_test_scores = clf.decision_function(testset)  # outlier scores
+test_pred = clf.predict(testset)  # outlier labels (0 or 1)
+test_scores = clf.decision_function(testset)  # outlier scores
+
+print("\nOn Test Data:")
+evaluate_print(clf_name, testlabel, test_scores)
 
