@@ -55,15 +55,15 @@ transform_list = [
 transform_chain = transforms.Compose(transform_list)
 
 if dataset == 'cifar10':
-    item = datasets.CIFAR10(root=args.data_dir, train=False, transform=transform_chain, download=True)
+    item = datasets.CIFAR10(root=args.data_dir, train=True, transform=transform_chain, download=True)
 elif dataset == 'cifar100':
-    item = datasets.CIFAR100(root=args.data_dir, train=False, transform=transform_chain, download=True)
+    item = datasets.CIFAR100(root=args.data_dir, train=True, transform=transform_chain, download=True)
 
 trainset = data.DataLoader(item, batch_size=1000, shuffle=False, num_workers=0)
 
 clf_name = 'LUNAR'
 clf = LUNAR()
-clf.fit(trainset)
+#clf.fit(trainset)
 
 test_pred = clf.predict(testset)  # outlier labels (0 or 1)
 test_scores = clf.decision_function(testset)  # outlier scores
