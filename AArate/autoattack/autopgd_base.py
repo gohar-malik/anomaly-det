@@ -10,6 +10,8 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import math
+from functools import reduce
+import operator
 import random
 
 from autoattack.other_utils import L0_norm, L1_norm, L2_norm
@@ -296,7 +298,8 @@ class APGDAttack():
         x_adv_old = x_adv.clone()
         counter = 0
         k = self.n_iter_2 + 0
-        n_fts = math.prod(self.orig_dim)
+        # n_fts = math.prod(self.orig_dim)
+        n_fts = reduce(operator.mul, self.orig_dim, 1)
         if self.norm == 'L1':
             k = max(int(.04 * self.n_iter), 1)
             if x_init is None:
