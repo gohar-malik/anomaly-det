@@ -381,12 +381,13 @@ if __name__ == '__main__':
     parser.add_argument('--data_root_path', '--drp', default='/ssd1/haotao/datasets/', help='Where you save all your datasets.')
     parser.add_argument('--dout', default='svhn', choices=['svhn', 'places365', 'cifar', 'texture', 'tin', 'lsun'], help='which dout to use')
     parser.add_argument('--model', '--md', default='ResNet18', choices=['ResNet18', 'ResNet34', 'WRN40'], help='which model to use')
+    parser.add_argument('--norm', default='Linf', choices=['Linf', 'L2'])
     # 
     parser.add_argument('--imbalance_ratio', '--rho', default=0.01, type=float)
     parser.add_argument('--test_batch_size', '--tb', type=int, default=1000)
     parser.add_argument('--metric', default='msp', choices=['msp'], help='OOD detection metric')
     parser.add_argument('--ckpt_path', default='')
-    parser.add_argument('--ckpt', default='latest', choices=['latest', 'best'])
+    parser.add_argument('--ckpt', default='')
     parser.add_argument('--only_id', action='store_true', help='If true, only test ID acc')
     args = parser.parse_args()
     print(args)
@@ -422,28 +423,29 @@ if __name__ == '__main__':
                                 drop_last=False, pin_memory=True)
     if args.dout == 'cifar':
         if args.dataset == 'cifar10':
-            args.dout = 'cifar100'
+            #args.dout = 'cifar100'
+            if args.norm == 'Linf':
+                ood_loader = torch.load('aa_standard_1_1000_eps_0.03137_Linf_cifar10.pth')
+            elif args.norm == 'L2':
+                ood_loader = torch.load('aa_standard_1_1000_eps_0.03137_L2_cifar10.pth')
         elif args.dataset == 'cifar100':
-            args.dout = 'cifar10'
-    ood_set = SCOODDataset(os.path.join(args.data_root_path, 'SCOOD'), id_name=args.dataset, ood_name=args.dout, transform=test_transform)
-    ood_loader = DataLoader(ood_set, batch_size=args.test_batch_size, shuffle=False, num_workers=args.num_workers,
-                                drop_last=False, pin_memory=True)
-    print('Dout is %s with %d images' % (args.dout, len(ood_set)))
+            #args.dout = 'cifar10'
+            if args.norm == 'Linf':
+                ood_loader = torch.load('aa_standard_1_1000_eps_0.03137_Linf_cifar100.pth')
+            elif args.norm == 'L2':
+                ood_loader = torch.load('aa_standard_1_1000_eps_0.03137_L2_cifar100.pth')
 
     img_num_per_cls = np.array(train_set.img_num_per_cls)
 
     # model:
     if args.model == 'ResNet18':
-        model = ResNet18(num_classes=num_classes).cuda()
+        model = ResNet18(num_classes=num_classes)
     elif args.model == 'ResNet34':
         model = ResNet34(num_classes=num_classes).cuda()
     # model = torch.nn.DataParallel(model)
 
     # load model:
-    if args.ckpt == 'latest':
-        ckpt = torch.load(os.path.join(args.ckpt_path, 'latest.pth'))['model']
-    else:
-        ckpt = torch.load(os.path.join(args.ckpt_path, 'best_clean_acc.pth'))
+    ckpt = torch.load(args.ckpt,map_location='cuda:0')
     model.load_state_dict(ckpt, strict=False)   
     model.requires_grad_(False)
 
