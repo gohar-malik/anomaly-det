@@ -374,7 +374,7 @@ def val_cifar():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Test a CIFAR Classifier')
-    parser.add_argument('--gpu', default='3')
+    parser.add_argument('--gpu', default='0')
     parser.add_argument('--num_workers', type=int, default=4)
     # dataset:
     parser.add_argument('--dataset', '--ds', default='cifar10', choices=['cifar10', 'cifar100'], help='which dataset to use')
@@ -391,6 +391,10 @@ if __name__ == '__main__':
     parser.add_argument('--only_id', action='store_true', help='If true, only test ID acc')
     args = parser.parse_args()
     print(args)
+
+    use_cuda = (args.gpu is not None) and (torch.cuda.is_available())
+    device = torch.device(f"cuda:{args.gpu}" if use_cuda else "cpu")
+    print(f"Using Device: {device}")
 
     # load id data selection mask:
     if args.only_id:
