@@ -443,7 +443,7 @@ if __name__ == '__main__':
 
     # model:
     if args.model == 'ResNet18':
-        model = ResNet18(num_classes=num_classes)
+        model = ResNet18(num_classes=num_classes).cuda()
     elif args.model == 'ResNet34':
         model = ResNet34(num_classes=num_classes).cuda()
     # model = torch.nn.DataParallel(model)
