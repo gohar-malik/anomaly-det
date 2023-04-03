@@ -201,7 +201,9 @@ def val_cifar():
         if args.metric not in ['odin', 'maha']:
             stack.enter_context(torch.no_grad())
 
-        for images, sc_labels in ood_loader:
+        for images in ood_loader["adv_complete"]:
+            sc_labels=torch.tensor([-1])
+            images = images.unsqueeze(0)
             images, sc_labels = images.cuda(), sc_labels.cuda()
             logits, scores = get_scores_fn(model, images)
             # append loss:
