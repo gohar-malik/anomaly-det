@@ -1,10 +1,10 @@
 # Adversarial Sample Detection Common Project
 
-# Training Resnet18 on Cifar 10
+## Training Resnet18 on Cifar 10
 
-# Training Resnet18 on Cifar 100
+## Training Resnet18 on Cifar 100
 
-# Running Autoattack and generating adversarial samples
+## Running Autoattack and generating adversarial samples
 
 1.Move the trained Resnet18 .pth checkpoint files into the directory folder AArate
 Note there are already two Pre-Trained Resnet18 Models in the AArate one for cifar10 and cifar100 named cifar10.pth and cifar100.pth respectively
@@ -40,7 +40,7 @@ python AArate.py --dataset cifar100 --norm L2\
 Running the autoattack code will generate a .pth file in the results folder of adversarial samples that has the dataset and norm used contained in the name
 for example for cifar10 dataset and linf norm the file would be called "aa_standard_1_1000_eps_0.03137_Linf_cifar10.pth"
 
-# Partial and Asymmetric Contrastive Learning for Out-Of-Distribution Detection in Long-Tailed Recognition
+## Partial and Asymmetric Contrastive Learning for Out-Of-Distribution Detection in Long-Tailed Recognition
 
 1.Move the .pth files generated from autoattack into the OOD_detect_ICML folder, 
 Important: make sure not to change the name of the .pth files from the autoattack adversarial sample generation otherwise the code will not work
@@ -82,6 +82,6 @@ python test.py --gpu 0  --dout cifar --ckpt_path ./results/ --drp ./datasets/\
     --ckpt ./CIFAR100-LT-stage2.pth
 ```
 
-# Detecting Adversarial Examples from Inconsistency of Spatial-Transform Domain
+## Detecting Adversarial Examples from Inconsistency of Spatial-Transform Domain
 
 
