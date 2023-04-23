@@ -23,6 +23,7 @@ parser.add_argument('--data_dir', type=str, default='./data')
 parser.add_argument('--norm', type=str, default='Linf')
 parser.add_argument('--epsilon', type=float, default=8./255.)
 parser.add_argument('--model', type=str, default='./model_test.pth')
+parser.add_argument('--dataset', type=str, default='cifar10')
 parser.add_argument('--n_ex', type=int, default=1000)
 parser.add_argument('--save_dir', type=str, default='./results')
 parser.add_argument('--batch_size', type=int, default=500)
@@ -32,21 +33,16 @@ parser.add_argument('--state-path', type=Path, default=None)
 
 args = parser.parse_args()
 
-#edit below lines to change norm, model and dataset
-args.norm = 'Linf' #choose either 'Linf' or 'L2'
-args.model = './cifar10.pth'
-dataset = 'cifar10' #choose either 'cifar10' or 'cifar100'
-
 ### device config
 use_cuda = (args.gpu is not None) and (torch.cuda.is_available())
 device = torch.device(f"cuda:{args.gpu}" if use_cuda else "cpu")
 print(f"Using Device: {device}")
 
-if dataset == 'cifar10':
+if args.dataset == 'cifar10':
     classes = 10
     mean = (0.49139968, 0.48215827 ,0.44653124)
     std = (0.24703233,0.24348505,0.26158768)
-elif dataset == 'cifar100':
+elif args.dataset == 'cifar100':
     classes = 100
     mean = (0.5070751592371323, 0.48654887331495095, 0.4409178433670343)
     std = (0.2673342858792401, 0.2564384629170883, 0.27615047132568404)
@@ -64,9 +60,9 @@ transform_list = [
     ]
 transform_chain = transforms.Compose(transform_list)
 
-if dataset == 'cifar10':
+if args.dataset == 'cifar10':
     item = datasets.CIFAR10(root=args.data_dir, train=False, transform=transform_chain, download=True)
-elif dataset == 'cifar100':
+elif args.dataset == 'cifar100':
     item = datasets.CIFAR100(root=args.data_dir, train=False, transform=transform_chain, download=True)
 
 test_loader = data.DataLoader(item, batch_size=1000, shuffle=False, num_workers=0)
@@ -84,4 +80,4 @@ y_test = torch.cat(l, 0)
 with torch.no_grad():
     adv_complete = adversary.run_standard_evaluation(x_test[:args.n_ex], y_test[:args.n_ex],bs=args.batch_size, state_path=args.state_path)
 
-    torch.save({'adv_complete': adv_complete}, '{}/{}_{}_1_{}_eps_{:.5f}_{}_{}.pth'.format(args.save_dir, 'aa', args.version, adv_complete.shape[0], args.epsilon, args.norm, dataset))
+    torch.save({'adv_complete': adv_complete}, '{}/{}_{}_1_{}_eps_{:.5f}_{}_{}.pth'.format(args.save_dir, 'aa', args.version, adv_complete.shape[0], args.epsilon, args.norm, args.dataset))
