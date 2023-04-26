@@ -6,11 +6,11 @@ cd into the train_resnet folder and run train_cifar10.py
 ```
 python train_cifar10.py
 ```
-This will save checkpoint files into the folder ./train_resnet/checkpoints/model_ResNet18_cifar10, look for the highest numbered one that is labeled best
+This will save checkpoint files into the folder ./train_resnet/checkpoints/model_ResNet18_cifar10, look for the highest numbered one that is labeled best.
 
-Run the test_cifar10.py file with checkpoint with the highest number that is labeled best
+Run the test_cifar10.py to test the trained model on test set. By default it loads the ./train_resnet/checkpoints/cifar10.pth checkpoint which is the best performing checkpoint in our experiments wtih 93.10% test accuracy.
 ```
-python test_cifar10.py -weights <checkpoint_file_to_be_tested>
+python test_cifar10.py
 ```
 
 ## Training Resnet18 on Cifar 100
@@ -21,10 +21,12 @@ python train_cifar100.py
 ```
 This will save checkpoint files into the folder ./train_resnet/checkpoints/model_ResNet18_cifar100, look for the highest numbered one that is labeled best
 
-Run the test_cifar100.py file with checkpoint with the highest number that is labeled best
+Run the test_cifar100.py file to test the trained model on test set. By default it loads the ./train_resnet/checkpoints/cifar100.pth checkpoint which is the best performing checkpoint in our experiments wtih 76.62% test accuracy.
 ```
-python test_cifar100.py -weights <checkpoint_file_to_be_tested>
+python test_cifar100.py
 ```
+*The best checkpoints for both Cifar10 and Cifar100 datasets are already provided in this repo.*
+*The train and test scripts for both Cifar10 and Cifar100 are configured to automatically download the datasets (if not present) and place them in the ./train_resnet/data directory.*
 
 ## Running Autoattack and generating adversarial samples
 
