@@ -2,12 +2,34 @@
 
 ## Training Resnet18 on Cifar 10
 
+cd into the train_resnet folder and run train_cifar10.py
+```
+python train_cifar10.py
+```
+This will save checkpoint files into the folder ./train_resnet/checkpoints/model_ResNet18_cifar10, look for the highest numbered one that is labeled best
+
+Run the test_cifar10.py file with checkpoint with the highest number that is labeled best
+```
+python test_cifar10.py -weights <checkpoint_file_to_be_tested>
+```
+
 ## Training Resnet18 on Cifar 100
+
+cd into the train_resnet folder and run train_cifar10.py
+```
+python train_cifar100.py
+```
+This will save checkpoint files into the folder ./train_resnet/checkpoints/model_ResNet18_cifar100, look for the highest numbered one that is labeled best
+
+Run the test_cifar100.py file with checkpoint with the highest number that is labeled best
+```
+python test_cifar100.py -weights <checkpoint_file_to_be_tested>
+```
 
 ## Running Autoattack and generating adversarial samples
 
 1.Move the trained Resnet18 .pth checkpoint files into the directory folder AArate
-Note there are already two Pre-Trained Resnet18 Models in the AArate one for cifar10 and cifar100 named cifar10.pth and cifar100.pth respectively
+Note there are already two Pre-Trained Resnet18 Model checkpoints in the AArate one for cifar10 and cifar100 named cifar10.pth and cifar100.pth respectively that were used for the actual adversarial sample generation done in the report
 
 2.cd into the AArate directory
 
@@ -16,25 +38,25 @@ Note there are already two Pre-Trained Resnet18 Models in the AArate one for cif
 For Cifar10 and norm of Linf
 ```
 python AArate.py --dataset cifar10 --norm Linf\
-    --model <name_of_.pth_file_to_be_used>
+    --model <.pth_checkpoint_file_to_be_used>
 ```
 
 For Cifar10 and norm of L2
 ```
 python AArate.py --dataset cifar10 --norm L2\
-    --model <name_of_.pth_file_to_be_used>
+    --model <.pth_checkpoint_file_to_be_used>
 ```
 
 For Cifar100 and norm of Linf
 ```
 python AArate.py --dataset cifar100 --norm Linf\
-    --model <name_of_.pth_file_to_be_used>
+    --model <.pth_checkpoint_file_to_be_used>
 ```
 
 For Cifar100 and norm of L2
 ```
 python AArate.py --dataset cifar100 --norm L2\
-    --model <name_of_.pth_file_to_be_used>
+    --model <.pth_checkpoint_file_to_be_used>
 ```
 
 Running the autoattack code will generate a .pth file in the results folder of adversarial samples that has the dataset and norm used contained in the name
