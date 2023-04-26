@@ -1,5 +1,6 @@
 train_resnet/checkpoints/*/
 data/*
+!data/data_will_be_downloaded_here
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
