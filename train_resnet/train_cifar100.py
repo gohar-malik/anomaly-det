@@ -117,7 +117,7 @@ if __name__ == '__main__':
         transforms.Normalize(mean, std)
     ])
     #cifar100_training = CIFAR100Train(path, transform=transform_train)
-    cifar100_training = torchvision.datasets.CIFAR100(root='./data', train=True, download=True, transform=transform_train)
+    cifar100_training = torchvision.datasets.CIFAR100(root='../data', train=True, download=True, transform=transform_train)
     cifar100_training_loader = DataLoader(cifar100_training, shuffle=True, num_workers=4, batch_size=args.b)
 
     transform_test = transforms.Compose([
@@ -125,7 +125,7 @@ if __name__ == '__main__':
         transforms.Normalize(mean, std)
     ])
     #cifar100_test = CIFAR100Test(path, transform=transform_test)
-    cifar100_test = torchvision.datasets.CIFAR100(root='./data', train=False, download=True, transform=transform_test)
+    cifar100_test = torchvision.datasets.CIFAR100(root='../data', train=False, download=True, transform=transform_test)
     cifar100_test_loader = DataLoader(cifar100_test, shuffle=True, num_workers=4, batch_size=args.b)
 
     

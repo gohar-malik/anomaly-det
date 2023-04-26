@@ -19,7 +19,7 @@ from autoattack import AutoAttack
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-gpu', type=int, default=0, help='gpu id to use')
-parser.add_argument('--data_dir', type=str, default='./data')
+parser.add_argument('--data_dir', type=str, default='../data')
 parser.add_argument('--norm', type=str, default='Linf')
 parser.add_argument('--epsilon', type=float, default=8./255.)
 parser.add_argument('--model', type=str, default='./model_test.pth')

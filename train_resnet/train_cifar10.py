@@ -97,7 +97,7 @@ if __name__ == '__main__':
         transforms.Normalize(mean, std)
     ])
     #cifar10_training = CIFAR10Train(path, transform=transform_train)
-    cifar10_training = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform_train)
+    cifar10_training = torchvision.datasets.CIFAR10(root='../data', train=True, download=True, transform=transform_train)
     cifar10_training_loader = DataLoader(cifar10_training, shuffle=True, num_workers=4, batch_size=args.b)
 
     transform_test = transforms.Compose([
@@ -105,7 +105,7 @@ if __name__ == '__main__':
         transforms.Normalize(mean, std)
     ])
     #cifar10_test = CIFAR10Test(path, transform=transform_test)
-    cifar10_test = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform_test)
+    cifar10_test = torchvision.datasets.CIFAR10(root='../data', train=False, download=True, transform=transform_test)
     cifar10_test_loader = DataLoader(cifar10_test, shuffle=True, num_workers=4, batch_size=args.b)
 
     ### training config
