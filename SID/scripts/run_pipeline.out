@@ -1,0 +1,182 @@
+nohup: ignoring input
+Device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+Traceback (most recent call last):
+  File "adv_samples.py", line 256, in <module>
+    run(args)
+  File "adv_samples.py", line 221, in run
+    device       = device
+  File "adv_samples.py", line 78, in validate
+    inputs_adv = atk(inputs, targets)
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torchattacks/attack.py", line 448, in __call__
+    adv_inputs = self.forward(inputs, labels, *args, **kwargs)
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torchattacks/attacks/deepfool.py", line 57, in forward
+    early_stop, pre, adv_image = self._forward_indiv(adv_images[idx], labels[idx])
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torchattacks/attacks/deepfool.py", line 92, in _forward_indiv
+    value[label] = float('inf')
+IndexError: index 9 is out of bounds for dimension 0 with size 9
+Device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+TEST [  11/157] CLEAN: 0.9062 (0.9219) CLEAN DWT: 0.8438 (0.8949) ADV: 0.0781 (0.0952) ADV DWT: 0.1875 (0.1619) NOISE: 0.7188 (0.7145)
+TEST [  21/157] CLEAN: 0.8906 (0.9196) CLEAN DWT: 0.9219 (0.8832) ADV: 0.0469 (0.1071) ADV DWT: 0.1719 (0.1555) NOISE: 0.7500 (0.7202)
+TEST [  31/157] CLEAN: 0.8750 (0.9189) CLEAN DWT: 0.8438 (0.8826) ADV: 0.0938 (0.1058) ADV DWT: 0.1719 (0.1462) NOISE: 0.7188 (0.7359)
+TEST [  41/157] CLEAN: 0.8594 (0.9139) CLEAN DWT: 0.8281 (0.8788) ADV: 0.1406 (0.1098) ADV DWT: 0.0938 (0.1437) NOISE: 0.7500 (0.7268)
+TEST [  51/157] CLEAN: 0.9219 (0.9157) CLEAN DWT: 0.8906 (0.8805) ADV: 0.1094 (0.1112) ADV DWT: 0.1406 (0.1431) NOISE: 0.7656 (0.7246)
+TEST [  61/157] CLEAN: 0.9531 (0.9129) CLEAN DWT: 0.8750 (0.8768) ADV: 0.0781 (0.1122) ADV DWT: 0.1562 (0.1470) NOISE: 0.7188 (0.7216)
+TEST [  71/157] CLEAN: 0.9219 (0.9162) CLEAN DWT: 0.9219 (0.8814) ADV: 0.0938 (0.1107) ADV DWT: 0.1250 (0.1441) NOISE: 0.7500 (0.7243)
+TEST [  81/157] CLEAN: 0.9062 (0.9153) CLEAN DWT: 0.8750 (0.8791) ADV: 0.1562 (0.1101) ADV DWT: 0.1875 (0.1424) NOISE: 0.7812 (0.7213)
+TEST [  91/157] CLEAN: 0.9531 (0.9159) CLEAN DWT: 0.9688 (0.8803) ADV: 0.1094 (0.1097) ADV DWT: 0.1562 (0.1449) NOISE: 0.6719 (0.7220)
+TEST [ 101/157] CLEAN: 0.8906 (0.9160) CLEAN DWT: 0.8281 (0.8806) ADV: 0.0781 (0.1084) ADV DWT: 0.1562 (0.1450) NOISE: 0.7344 (0.7208)
+TEST [ 111/157] CLEAN: 0.8906 (0.9153) CLEAN DWT: 0.8594 (0.8799) ADV: 0.1250 (0.1091) ADV DWT: 0.1875 (0.1448) NOISE: 0.7188 (0.7199)
+TEST [ 121/157] CLEAN: 0.9531 (0.9159) CLEAN DWT: 0.9219 (0.8808) ADV: 0.0625 (0.1101) ADV DWT: 0.1406 (0.1467) NOISE: 0.8125 (0.7203)
+TEST [ 131/157] CLEAN: 0.9531 (0.9159) CLEAN DWT: 0.8906 (0.8795) ADV: 0.0469 (0.1091) ADV DWT: 0.0781 (0.1450) NOISE: 0.7344 (0.7219)
+TEST [ 141/157] CLEAN: 0.9531 (0.9160) CLEAN DWT: 0.8594 (0.8799) ADV: 0.1250 (0.1078) ADV DWT: 0.1094 (0.1462) NOISE: 0.7500 (0.7222)
+TEST [ 151/157] CLEAN: 0.9062 (0.9154) CLEAN DWT: 0.9219 (0.8809) ADV: 0.0938 (0.1075) ADV DWT: 0.1719 (0.1466) NOISE: 0.7188 (0.7234)
+TEST [FINAL] CLEAN: 0.9160 CLEAN DWT: 0.8816 ADV: 0.1074 ADV DWT: 0.1459 NOISE: 0.7241
+Device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+Traceback (most recent call last):
+  File "adv_samples.py", line 256, in <module>
+    run(args)
+  File "adv_samples.py", line 221, in run
+    device       = device
+  File "adv_samples.py", line 63, in validate
+    atk = create_attack(model, adv_method, adv_params, num_classes=num_classes)
+  File "/home/gohar/DCV/SID/adv_attacks/factory.py", line 17, in create_attack
+    atk = AutoAttack(model, **adv_params)
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/autoattack/autoattack.py", line 31, in __init__
+    from .fab_pt import FABAttack
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/autoattack/fab_pt.py", line 16, in <module>
+    from torch.autograd.gradcheck import zero_gradients
+ImportError: cannot import name 'zero_gradients'
+usage: known_attack.py [-h] [--exp-name EXP_NAME]
+                       [--modelname {vgg19,resnet34}]
+                       [--model_checkpoint MODEL_CHECKPOINT]
+                       [--model_dwt_checkpoint MODEL_DWT_CHECKPOINT]
+                       [--datadir DATADIR] [--savedir SAVEDIR]
+                       [--save_bucket_path SAVE_BUCKET_PATH]
+                       [--dataname {CIFAR10,CIFAR100,SVHN}]
+                       [--num_classes NUM_CLASSES] [--train_ratio TRAIN_RATIO]
+                       [--dev_ratio DEV_RATIO] [--epochs EPOCHS]
+                       [--batch-size BATCH_SIZE] [--log-interval LOG_INTERVAL]
+                       [--seed SEED]
+known_attack.py: error: argument --modelname: invalid choice: 'resnet18' (choose from 'vgg19', 'resnet34')
+usage: known_attack.py [-h] [--exp-name EXP_NAME]
+                       [--modelname {vgg19,resnet34}]
+                       [--model_checkpoint MODEL_CHECKPOINT]
+                       [--model_dwt_checkpoint MODEL_DWT_CHECKPOINT]
+                       [--datadir DATADIR] [--savedir SAVEDIR]
+                       [--save_bucket_path SAVE_BUCKET_PATH]
+                       [--dataname {CIFAR10,CIFAR100,SVHN}]
+                       [--num_classes NUM_CLASSES] [--train_ratio TRAIN_RATIO]
+                       [--dev_ratio DEV_RATIO] [--epochs EPOCHS]
+                       [--batch-size BATCH_SIZE] [--log-interval LOG_INTERVAL]
+                       [--seed SEED]
+known_attack.py: error: argument --modelname: invalid choice: 'resnet18' (choose from 'vgg19', 'resnet34')
+usage: known_attack.py [-h] [--exp-name EXP_NAME]
+                       [--modelname {vgg19,resnet34}]
+                       [--model_checkpoint MODEL_CHECKPOINT]
+                       [--model_dwt_checkpoint MODEL_DWT_CHECKPOINT]
+                       [--datadir DATADIR] [--savedir SAVEDIR]
+                       [--save_bucket_path SAVE_BUCKET_PATH]
+                       [--dataname {CIFAR10,CIFAR100,SVHN}]
+                       [--num_classes NUM_CLASSES] [--train_ratio TRAIN_RATIO]
+                       [--dev_ratio DEV_RATIO] [--epochs EPOCHS]
+                       [--batch-size BATCH_SIZE] [--log-interval LOG_INTERVAL]
+                       [--seed SEED]
+known_attack.py: error: argument --modelname: invalid choice: 'resnet18' (choose from 'vgg19', 'resnet34')
+Device: cuda:0
+Device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+Traceback (most recent call last):
+  File "adv_samples.py", line 256, in <module>
+    run(args)
+  File "adv_samples.py", line 221, in run
+    device       = device
+  File "adv_samples.py", line 78, in validate
+    inputs_adv = atk(inputs, targets)
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torchattacks/attack.py", line 448, in __call__
+    adv_inputs = self.forward(inputs, labels, *args, **kwargs)
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torchattacks/attacks/deepfool.py", line 57, in forward
+    early_stop, pre, adv_image = self._forward_indiv(adv_images[idx], labels[idx])
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/torchattacks/attacks/deepfool.py", line 92, in _forward_indiv
+    value[label] = float('inf')
+IndexError: index 99 is out of bounds for dimension 0 with size 99
+Device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+TEST [  11/157] CLEAN: 0.8125 (0.7642) CLEAN DWT: 0.6719 (0.6989) ADV: 0.0312 (0.0312) ADV DWT: 0.0781 (0.0497) NOISE: 0.4062 (0.4134)
+TEST [  21/157] CLEAN: 0.7969 (0.7619) CLEAN DWT: 0.6719 (0.7001) ADV: 0.0469 (0.0283) ADV DWT: 0.0469 (0.0446) NOISE: 0.4844 (0.4152)
+TEST [  31/157] CLEAN: 0.8594 (0.7636) CLEAN DWT: 0.8125 (0.7041) ADV: 0.0312 (0.0282) ADV DWT: 0.0625 (0.0454) NOISE: 0.4844 (0.4168)
+TEST [  41/157] CLEAN: 0.7812 (0.7671) CLEAN DWT: 0.7812 (0.7088) ADV: 0.0312 (0.0271) ADV DWT: 0.0469 (0.0454) NOISE: 0.3281 (0.4173)
+TEST [  51/157] CLEAN: 0.6562 (0.7626) CLEAN DWT: 0.6875 (0.7040) ADV: 0.0000 (0.0273) ADV DWT: 0.0156 (0.0456) NOISE: 0.3125 (0.4084)
+TEST [  61/157] CLEAN: 0.7969 (0.7649) CLEAN DWT: 0.6094 (0.7026) ADV: 0.0469 (0.0274) ADV DWT: 0.0625 (0.0466) NOISE: 0.3438 (0.3991)
+TEST [  71/157] CLEAN: 0.6562 (0.7632) CLEAN DWT: 0.7188 (0.7047) ADV: 0.0156 (0.0255) ADV DWT: 0.0156 (0.0453) NOISE: 0.3281 (0.3999)
+TEST [  81/157] CLEAN: 0.8281 (0.7627) CLEAN DWT: 0.6875 (0.7004) ADV: 0.0156 (0.0257) ADV DWT: 0.0312 (0.0451) NOISE: 0.4062 (0.3985)
+TEST [  91/157] CLEAN: 0.8750 (0.7663) CLEAN DWT: 0.8281 (0.7062) ADV: 0.0312 (0.0258) ADV DWT: 0.0469 (0.0464) NOISE: 0.3906 (0.4006)
+TEST [ 101/157] CLEAN: 0.7812 (0.7658) CLEAN DWT: 0.7656 (0.7056) ADV: 0.0156 (0.0252) ADV DWT: 0.0938 (0.0481) NOISE: 0.3281 (0.4010)
+TEST [ 111/157] CLEAN: 0.7031 (0.7638) CLEAN DWT: 0.6562 (0.7050) ADV: 0.0156 (0.0260) ADV DWT: 0.0781 (0.0490) NOISE: 0.3906 (0.4032)
+TEST [ 121/157] CLEAN: 0.7656 (0.7634) CLEAN DWT: 0.6719 (0.7035) ADV: 0.0156 (0.0251) ADV DWT: 0.0625 (0.0488) NOISE: 0.4219 (0.4019)
+TEST [ 131/157] CLEAN: 0.7969 (0.7630) CLEAN DWT: 0.7344 (0.7044) ADV: 0.0469 (0.0259) ADV DWT: 0.0781 (0.0496) NOISE: 0.4062 (0.4028)
+TEST [ 141/157] CLEAN: 0.7812 (0.7646) CLEAN DWT: 0.7188 (0.7051) ADV: 0.0625 (0.0274) ADV DWT: 0.0938 (0.0508) NOISE: 0.4219 (0.4057)
+TEST [ 151/157] CLEAN: 0.7344 (0.7658) CLEAN DWT: 0.7812 (0.7048) ADV: 0.0156 (0.0275) ADV DWT: 0.0312 (0.0498) NOISE: 0.3906 (0.4060)
+TEST [FINAL] CLEAN: 0.7662 CLEAN DWT: 0.7058 ADV: 0.0278 ADV DWT: 0.0497 NOISE: 0.4055
+Device: cuda:0
+Files already downloaded and verified
+Files already downloaded and verified
+Traceback (most recent call last):
+  File "adv_samples.py", line 256, in <module>
+    run(args)
+  File "adv_samples.py", line 221, in run
+    device       = device
+  File "adv_samples.py", line 63, in validate
+    atk = create_attack(model, adv_method, adv_params, num_classes=num_classes)
+  File "/home/gohar/DCV/SID/adv_attacks/factory.py", line 17, in create_attack
+    atk = AutoAttack(model, **adv_params)
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/autoattack/autoattack.py", line 31, in __init__
+    from .fab_pt import FABAttack
+  File "/home/gohar/miniconda3/envs/dcv/lib/python3.6/site-packages/autoattack/fab_pt.py", line 16, in <module>
+    from torch.autograd.gradcheck import zero_gradients
+ImportError: cannot import name 'zero_gradients'
+usage: known_attack.py [-h] [--exp-name EXP_NAME]
+                       [--modelname {vgg19,resnet34}]
+                       [--model_checkpoint MODEL_CHECKPOINT]
+                       [--model_dwt_checkpoint MODEL_DWT_CHECKPOINT]
+                       [--datadir DATADIR] [--savedir SAVEDIR]
+                       [--save_bucket_path SAVE_BUCKET_PATH]
+                       [--dataname {CIFAR10,CIFAR100,SVHN}]
+                       [--num_classes NUM_CLASSES] [--train_ratio TRAIN_RATIO]
+                       [--dev_ratio DEV_RATIO] [--epochs EPOCHS]
+                       [--batch-size BATCH_SIZE] [--log-interval LOG_INTERVAL]
+                       [--seed SEED]
+known_attack.py: error: argument --modelname: invalid choice: 'resnet18' (choose from 'vgg19', 'resnet34')
+usage: known_attack.py [-h] [--exp-name EXP_NAME]
+                       [--modelname {vgg19,resnet34}]
+                       [--model_checkpoint MODEL_CHECKPOINT]
+                       [--model_dwt_checkpoint MODEL_DWT_CHECKPOINT]
+                       [--datadir DATADIR] [--savedir SAVEDIR]
+                       [--save_bucket_path SAVE_BUCKET_PATH]
+                       [--dataname {CIFAR10,CIFAR100,SVHN}]
+                       [--num_classes NUM_CLASSES] [--train_ratio TRAIN_RATIO]
+                       [--dev_ratio DEV_RATIO] [--epochs EPOCHS]
+                       [--batch-size BATCH_SIZE] [--log-interval LOG_INTERVAL]
+                       [--seed SEED]
+known_attack.py: error: argument --modelname: invalid choice: 'resnet18' (choose from 'vgg19', 'resnet34')
+usage: known_attack.py [-h] [--exp-name EXP_NAME]
+                       [--modelname {vgg19,resnet34}]
+                       [--model_checkpoint MODEL_CHECKPOINT]
+                       [--model_dwt_checkpoint MODEL_DWT_CHECKPOINT]
+                       [--datadir DATADIR] [--savedir SAVEDIR]
+                       [--save_bucket_path SAVE_BUCKET_PATH]
+                       [--dataname {CIFAR10,CIFAR100,SVHN}]
+                       [--num_classes NUM_CLASSES] [--train_ratio TRAIN_RATIO]
+                       [--dev_ratio DEV_RATIO] [--epochs EPOCHS]
+                       [--batch-size BATCH_SIZE] [--log-interval LOG_INTERVAL]
+                       [--seed SEED]
+known_attack.py: error: argument --modelname: invalid choice: 'resnet18' (choose from 'vgg19', 'resnet34')
+Device: cuda:0
+run_pipeline.sh: line 27: e: command not found

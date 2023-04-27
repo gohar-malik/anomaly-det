@@ -1,0 +1,6 @@
+{
+    "eps":"8/255",
+    "steps":30,
+    "n_restarts":3,
+    "targeted":false
+}
