@@ -115,6 +115,7 @@ python test.py --gpu 0  --dout cifar --ckpt_path ./results/ --drp ../data/\
 
 1. Then download the `results.zip` for this gdrive [link](https://drive.google.com/file/d/1XEKEix9eKRDov1b7ReNYqBLQ6S4P8lTG/view?usp=sharing), and extract it using the comman below:
 ```
+gdown 1XEKEix9eKRDov1b7ReNYqBLQ6S4P8lTG
 unzip results.zip
 ```
 *This will download all the trained models and generated adversarial samples to be used in this experiment.*
