@@ -113,7 +113,7 @@ python test.py --gpu 0  --dout cifar --ckpt_path ./results/ --drp ../data/\
 
 0. cd into the `./SID` folder
 
-1. Then download the `results.zip` for this drive link, and extract it using the comman below:
+1. Then download the `results.zip` for this gdrive [link](https://drive.google.com/file/d/1XEKEix9eKRDov1b7ReNYqBLQ6S4P8lTG/view?usp=sharing), and extract it using the comman below:
 ```
 unzip results.zip
 ```
