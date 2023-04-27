@@ -69,7 +69,7 @@ python AArate.py --dataset cifar100 --norm L2\
     --model ../checkpoints/cifar100.pth
 ```
 
-Running the autoattack code will generate a `.pth` file in ./AArate/results that has the dataset and norm used contained in the name
+Running the autoattack code will generate a `.pth` file in `./AArate/results` that has the dataset and norm used contained in the name
 for example for cifar10 dataset and linf norm the file would be called `aa_standard_1_1000_eps_0.03137_Linf_cifar10.pth`.
 
 ## Partial and Asymmetric Contrastive Learning for Out-Of-Distribution Detection in Long-Tailed Recognition
