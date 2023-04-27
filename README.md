@@ -1,4 +1,11 @@
 # Adversarial Sample Detection Common Project
+## Environment
+We recomment `conda` package manager to create a virtual environment for this code. Run the following commands one by one to create, activate and install all dependencies in a conda env.
+```
+conda env create -f environment.yml
+conda activate anomalydet
+conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 cudatoolkit=10.2 -c pytorch
+```
 
 ## Training Resnet18 on Cifar 10
 
